@@ -123,115 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &136560504
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 145106788960040614, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 542964745725144533, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2536443704525558071, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2593195632784609983, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4295155192707881041, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_Name
-      value: Complete XR Origin Set Up with Hands
-      objectReference: {fileID: 0}
-    - target: {fileID: 4439285988336818677, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7040110868085404378, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_Move
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7040110868085404378, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_TeleportInteractor
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7040110868085404378, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_TeleportModeCancel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7040110868085404378, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_TeleportModeActivate
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459249116835983823, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459249116835983823, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459249116835983823, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459249116835983823, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459249116835983823, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459249116835983823, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459249116835983823, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459249116835983823, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459249116835983823, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459249116835983823, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883217970777784049, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_Move
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883217970777784049, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_TeleportInteractor
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883217970777784049, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_TeleportModeCancel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883217970777784049, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
-      propertyPath: m_TeleportModeActivate
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5c0793ecb73e2984c8e9ce6ff5da92a5, type: 3}
 --- !u!1 &299639867
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +459,115 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &1804300007
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 287781409039304653, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969590122571219505, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_Move
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 969590122571219505, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_TeleportInteractor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 969590122571219505, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_TeleportModeCancel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 969590122571219505, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_TeleportModeActivate
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177652202722129723, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_Move
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177652202722129723, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_TeleportInteractor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177652202722129723, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_TeleportModeCancel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177652202722129723, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_TeleportModeActivate
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495763327421632434, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008673076031371166, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078368119421816779, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293072445574616571, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536759829629227498, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_Name
+      value: C_XRO_Hands_Teleporter_Poke_Ray_Direkt
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728446097267047573, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728446097267047573, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728446097267047573, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728446097267047573, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728446097267047573, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728446097267047573, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728446097267047573, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728446097267047573, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728446097267047573, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728446097267047573, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
 --- !u!23 &524405389751870701
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -745,5 +745,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 299639869}
   - {fileID: 1249617921}
-  - {fileID: 136560504}
   - {fileID: 8549252768918717875}
+  - {fileID: 1804300007}
