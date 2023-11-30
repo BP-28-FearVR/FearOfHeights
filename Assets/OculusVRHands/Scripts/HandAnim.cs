@@ -37,6 +37,15 @@ public class HandAnim : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        animator.keepAnimatorStateOnDisable = true;
+    }
+
+    private void OnDisable()
+    {
+    }
+
+    private void OnEnable()
+    {
     }
 
     void Update()
