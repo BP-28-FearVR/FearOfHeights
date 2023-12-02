@@ -4807,7 +4807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5728446097267047573}
   m_Layer: 0
-  m_Name: C_XRO_Hands_Teleporter_Poke_Ray_Direkt
+  m_Name: XR_Origin_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
