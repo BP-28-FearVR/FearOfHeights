@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEditor;
 
 public class SceneChanger : MonoBehaviour
 {
@@ -8,9 +9,10 @@ public class SceneChanger : MonoBehaviour
 
     private string sceneToLoad;
 
-    public void FadeToScene(string sceneName)
+    public void FadeToScene(SceneAsset sceneAsset)
     {
-        sceneToLoad = sceneName;
+
+        sceneToLoad = sceneAsset.name;
         animator.SetTrigger("FadeOut");
     }
 
