@@ -1,25 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-
+using TMPro;
 
 public class ParticipantIDHandler : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textField;
-    [SerializeField] private TextMeshProUGUI outputText;
 
+    [Tooltip("The text object in the 'InputField'. Displays the not yet submitted Value.")]
+    [SerializeField] private TextMeshProUGUI textField;
+
+    [Tooltip("The maxmimum number of characters that can be written to the 'InputField'.")]
     [SerializeField] private int maxCharInText = 16;
 
-    private static string participantID = null;
 
-    public static string ParticipantID { get => participantID; }
+    [Tooltip("The text object for Outputing the actual Value. Displays only the submitted Value.")]
+    [SerializeField] private TextMeshProUGUI outputText;
+
+    // Stores the ParticipantID after it is Submitted
+    private static string _participantID = null;
+
+    // Getter for _participantID 
+    public static string ParticipantID { get => _participantID; }
 
     void Start()
     {
         textField.text = "";
     }
 
+    // Writes the pressed Number to textField.
     public void NumberButtonPress(int number)
     {
         if (textField.text.Length + 1 <= maxCharInText)
@@ -28,6 +34,7 @@ public class ParticipantIDHandler : MonoBehaviour
         }
     }
 
+    // Deleteds the last Character from textField.
     public void RemoveButtonPress()
     {
         if (!string.IsNullOrEmpty(textField.text))
@@ -36,17 +43,16 @@ public class ParticipantIDHandler : MonoBehaviour
         }
     }
 
+    // Stores the Value from textField, displayes it and clears the textField.
     public void SubmitButtonPress()
     {
         if (!string.IsNullOrEmpty(textField.text))
         {
-            participantID = textField.text;
-            outputText.text = participantID;
+            _participantID = textField.text;
+            outputText.text = _participantID;
+
+            textField.text = "";
         }
     }
 
-    void Update()
-    {
-        
-    }
 }
