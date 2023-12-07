@@ -1,21 +1,25 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
+using UnityEditor;
 
 public class SceneChanger : MonoBehaviour
 {
-    public Animator animator;
+    [Tooltip("The Animator that is used for the scene transition.")]
+    [SerializeField] private Animator animator;
 
-    private string sceneToLoad;
+    //Name of the scene to Load.
+    private string _sceneToLoad;
 
-    public void FadeToScene(string sceneName)
+    // Starts the fade-out/in animation 
+    public void FadeToScene(SceneAsset sceneAsset)
     {
-        sceneToLoad = sceneName;
+        _sceneToLoad = sceneAsset.name;
         animator.SetTrigger("FadeOut");
     }
-
+    
+    // Handels the actual scene Transion
     public void OnFadeComplete()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene(_sceneToLoad);
     }
 }
