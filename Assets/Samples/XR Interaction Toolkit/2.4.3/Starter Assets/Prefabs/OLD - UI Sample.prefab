@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3347311276327707478}
   - component: {fileID: 2987389675039568010}
   m_Layer: 5
-  m_Name: UI Sample
+  m_Name: OLD - UI Sample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8747907325689103687, guid: 0cbc0856f0fb8d84a81be5dea463c369, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8747907326218408609, guid: 0cbc0856f0fb8d84a81be5dea463c369, type: 3}
       propertyPath: m_AnchorMax.x
