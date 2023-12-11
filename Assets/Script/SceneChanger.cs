@@ -11,12 +11,22 @@ public class SceneChanger : MonoBehaviour
     private string _sceneToLoad;
 
     // Starts the fade-out/in animation 
-    public void FadeToScene(SceneAsset sceneAsset)
+    public void FadeToScene(string sceneName)
     {
-        _sceneToLoad = sceneAsset.name;
+        _sceneToLoad = sceneName;
         animator.SetTrigger("FadeOut");
     }
-    
+
+    public void FadeToScene(SceneAsset sceneAsset)
+    {
+        FadeToScene(sceneAsset.name);
+    }
+
+    public void FadeToScene(Scene scene)
+    {
+        FadeToScene(scene.name);
+    }
+
     // Handels the actual scene Transion
     public void OnFadeComplete()
     {
