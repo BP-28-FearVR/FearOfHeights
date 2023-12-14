@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-//using System.Linq;
+using System.Linq;
 using UnityEngine;
 
 public class CollisionTriggeredTeleport : MonoBehaviour
@@ -38,11 +38,11 @@ public class CollisionTriggeredTeleport : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*Debug.Log("Bis hier hin komme ich");
+        Debug.Log("Bis hier hin komme ich");
         if (!UnityEditorInternal.InternalEditorUtility.tags.Contains<string>(_collidingTag))
         {
             Debug.Log("Fehler!");
-        }*/
+        }
     }
 
     // Update is called once per frame
