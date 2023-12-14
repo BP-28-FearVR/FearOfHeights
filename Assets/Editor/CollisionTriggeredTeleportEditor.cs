@@ -13,6 +13,8 @@ public class CollisionTriggeredTeleportEditor : Editor
     SerializedProperty detectUsing;
 
     SerializedProperty _collidingTag;
+    
+    SerializedProperty _collidingLayer;
 
     private void OnEnable()
     {
@@ -21,6 +23,7 @@ public class CollisionTriggeredTeleportEditor : Editor
         _teleportVector = serializedObject.FindProperty("_teleportVector");
         detectUsing = serializedObject.FindProperty("detectUsing");
         _collidingTag = serializedObject.FindProperty("_collidingTag");
+        _collidingLayer = serializedObject.FindProperty("_collidingLayer");
     }
 
     public override void OnInspectorGUI()
@@ -40,9 +43,9 @@ public class CollisionTriggeredTeleportEditor : Editor
         {
             EditorGUILayout.PropertyField(_collidingTag);
         }
-        else if (collisionTriggeredTeleport.detectUsing == CollisionTriggeredTeleport.DetectUsing.Layer)
+        else
         {
-            EditorGUILayout.LabelField("Du hast Layer ausgewählt");
+            EditorGUILayout.PropertyField(_collidingLayer);
         }
 
         serializedObject.ApplyModifiedProperties();
