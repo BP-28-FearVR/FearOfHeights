@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3609704899982035534}
   - component: {fileID: 2290210793738576132}
   m_Layer: 0
-  m_Name: Trigger Area
+  m_Name: Trigger Area Teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,3 +75,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49b32b83d2a0c641a23d972bf7885ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transformParent: 0
+  _vectorType: 0
+  _teleportVector: {x: 0, y: 0, z: 0}
+  detectUsing: 0
+  _collidingTag: Untagged
+  _collidingLayer: Default
