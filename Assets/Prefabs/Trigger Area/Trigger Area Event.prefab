@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2291527461652008106
+--- !u!1 &8898938008842846677
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6949669689500995670}
-  - component: {fileID: 800214045459547386}
-  - component: {fileID: 3609704899982035534}
-  - component: {fileID: 2290210793738576132}
+  - component: {fileID: 375338504175889901}
+  - component: {fileID: 222617878931557910}
+  - component: {fileID: 2631590151640746356}
+  - component: {fileID: 1732711839790678767}
   m_Layer: 0
-  m_Name: Trigger Area Teleport
+  m_Name: Trigger Area Event
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6949669689500995670
+--- !u!4 &375338504175889901
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2291527461652008106}
+  m_GameObject: {fileID: 8898938008842846677}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0.499, z: 0}
@@ -34,21 +34,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &800214045459547386
+--- !u!33 &222617878931557910
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2291527461652008106}
+  m_GameObject: {fileID: 8898938008842846677}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &3609704899982035534
+--- !u!65 &2631590151640746356
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2291527461652008106}
+  m_GameObject: {fileID: 8898938008842846677}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -63,21 +63,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2290210793738576132
+--- !u!114 &1732711839790678767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2291527461652008106}
+  m_GameObject: {fileID: 8898938008842846677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b49b32b83d2a0c641a23d972bf7885ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 80994fe4768b2c34598b39dc82872a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transformParent: 0
-  _vectorType: 0
-  _teleportVector: {x: 0, y: 0, z: 0}
-  detectUsing: 0
-  _collidingTag: Untagged
-  _collidingLayer: Default

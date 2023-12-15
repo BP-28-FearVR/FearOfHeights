@@ -1,9 +1,9 @@
 using UnityEditor;
 using UnityEngine;
 
-// Changes the Inspector Editor of the CollisionTriggeredTeleport Class
-[CustomEditor(typeof(CollisionTriggeredTeleport))]
-public class CollisionTriggeredTeleportEditor : Editor
+// Changes the Inspector Editor of the CollisionTriggeredEvent Class
+[CustomEditor(typeof(CollisionTriggeredEvent))]
+public class CollisionTriggeredEventEditor : Editor
 {
     SerializedProperty detectUsing;
 
@@ -11,11 +11,7 @@ public class CollisionTriggeredTeleportEditor : Editor
 
     SerializedProperty _collidingLayer;
 
-    SerializedProperty _transformParent;
-
-    SerializedProperty _vectorType;
-
-    SerializedProperty _teleportVector;
+    SerializedProperty _event;
 
     // OnEnable is called when the GameObject is loaded
     private void OnEnable()
@@ -24,16 +20,14 @@ public class CollisionTriggeredTeleportEditor : Editor
         detectUsing = serializedObject.FindProperty("detectUsing");
         _collidingTag = serializedObject.FindProperty("_collidingTag");
         _collidingLayer = serializedObject.FindProperty("_collidingLayer");
-        _transformParent = serializedObject.FindProperty("_transformParent");
-        _vectorType = serializedObject.FindProperty("_vectorType");
-        _teleportVector = serializedObject.FindProperty("_teleportVector");
+        _event = serializedObject.FindProperty("_event");
     }
 
     // OnInspectorGUI specifies the way the Inspector Editor should be drawn
     public override void OnInspectorGUI()
     {
-        // Get the current instance of CollisionTriggeredTeleport (target only exists in this context)
-        CollisionTriggeredTeleport collisionTriggeredTeleport = (CollisionTriggeredTeleport)target;
+        // Get the current instance of CollisionTriggeredEvent (target only exists in this context)
+        CollisionTriggeredEvent collisionTriggeredEvent = (CollisionTriggeredEvent)target;
 
         serializedObject.Update();
 
@@ -44,7 +38,7 @@ public class CollisionTriggeredTeleportEditor : Editor
         EditorGUILayout.PropertyField(detectUsing);
 
         // Show either Tag or Layer depending on the choosen Detection type
-        if (collisionTriggeredTeleport.detectUsing == CollisionTriggeredTeleport.DetectUsing.Tag)
+        if (collisionTriggeredEvent.detectUsing == CollisionTriggeredEvent.DetectUsing.Tag)
         {
             EditorGUILayout.PropertyField(_collidingTag);
         }
@@ -52,10 +46,8 @@ public class CollisionTriggeredTeleportEditor : Editor
         {
             EditorGUILayout.PropertyField(_collidingLayer);
         }
-        EditorGUILayout.PropertyField(_transformParent);
-        EditorGUILayout.PropertyField(_vectorType);
-        EditorGUILayout.PropertyField(_teleportVector);
-        
+        EditorGUILayout.PropertyField(_event);
+
         serializedObject.ApplyModifiedProperties();
     }
 }
