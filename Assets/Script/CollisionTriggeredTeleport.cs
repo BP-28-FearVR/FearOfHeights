@@ -40,19 +40,17 @@ public class CollisionTriggeredTeleport : CollisionTrigger
 
         // Get the Transform component of the actual GameObject to teleport
         Transform _gameObjectToTeleport;
-        
         if(_transformParent)
         {
-            _gameObjectToTeleport = other.gameObject.GetComponentInParent<Transform>();
+            _gameObjectToTeleport = other.gameObject.transform.parent;
         } else
         {
-            _gameObjectToTeleport = other.gameObject.GetComponent<Transform>();
+            _gameObjectToTeleport = other.gameObject.transform;
         }
-        
         // Teleport relative to the current position of the GameObject or the absolute position in the World
         if(_vectorType == TeleportMode.Relative)
         {
-            _gameObjectToTeleport.Translate(_teleportVector);
+            _gameObjectToTeleport.Translate(_teleportVector, Space.World);
         } else
         {
             _gameObjectToTeleport.position = _teleportVector;
