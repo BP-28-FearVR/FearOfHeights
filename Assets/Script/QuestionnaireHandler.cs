@@ -1,55 +1,210 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.Android;
+using UnityEngine.UI;
 
 public class QuestionnaireHandler : MonoBehaviour
 {
+    [SerializeField] private Button nextButton;
+    [SerializeField] private Button previousButton;
+    [SerializeField] private Button confirmButton;
+    private int _currentPage;
+
+    // creates an accessible component in the editor, which allows to add as many questions to the questionaire as one would like
+    // press "+" in the according component in the editor to add a new field for text input for each question
     [TextArea(15, 20)]
-    [SerializeField] private string[] textList;
+    [SerializeField] private string[] questionList;     
 
-    [SerializeField] private TextMeshProUGUI textObj;
+    // text field of the UI element, which is used to show the currently selected question
+    [SerializeField] private TextMeshProUGUI shownQuestion;
 
-    private int _postion = 0;
+    // radio buttons
+    [SerializeField] private Toggle[] options;
 
+    // _choices[i] saves the index of which radio button is selected on page i, if none is selected _choices[i] contains -1
+    private int[] _choiceOnPage;
+
+
+    // check if there has been entered a question via the input field in the editor
+    // if so, show the first question on the questionnaire UI, else initialize the question array with an empty string
+    // UI always starts displaying page 0
     void Start()
     {
-        if (textList.Length > 0)
+        // set up first page
+        _currentPage = 0;
+        if (questionList.Length <= 0)
         {
-            textObj.text = textList[0];
+            questionList = new string[1];
+            questionList[0] = "No Question";
+        }
+        shownQuestion.text = questionList[0];
+
+        // set up buttons
+        previousButton.interactable = false;
+        confirmButton.interactable = false;
+        if (questionList.Length <= 1)
+        {
+            nextButton.interactable = false;
         }
         else
         {
-            textObj.text = "";
-            textList = new string[1];
-            textList[0] = "";
+            nextButton.interactable = true;
         }
 
-        _postion = 0;
+        // initialize radio button choices: at first for each question all radio buttons are unselected (= -1)
+        _choiceOnPage = new int[questionList.Length];
+        for (int i = 0; i < questionList.Length; i++)
+        {
+            _choiceOnPage[i] = -1;
+        }
     }
 
-    public void next()
+    // if last page is reached and a choice has been made, the confirm button will be enabled
+    public void enableConfirm()
     {
-        _postion++;
-
-        if (_postion >= textList.Length)
+        if (_currentPage == questionList.Length - 1)
         {
-            _postion = textList.Length - 1;
+            saveChoices();
+            if (_choiceOnPage[_currentPage] >= 0)
+            {
+                confirmButton.interactable = true;
+            }
+            else
+            {
+                confirmButton.interactable = false;
+            }
         }
-
-        textObj.text = textList[_postion];
     }
 
-    public void prev()
+    // if the "next" button is clicked, the UI will show the next question in line
+    public void showNextPage()
     {
-        _postion--;
+        // increase page number
+        _currentPage++;
 
-        if (_postion < 0)
+        // if page number is out of bounds, reset to max page number
+        if (_currentPage >= questionList.Length)
         {
-            _postion = 0;
+            _currentPage = questionList.Length - 1;
         }
 
-        textObj.text = textList[_postion];
+        // display question according to page number
+        shownQuestion.text = questionList[_currentPage];
+
+        // disable "previous" button if there is no previous page
+        if (_currentPage == 0)
+        {
+            previousButton.interactable = false;
+        }
+        else
+        {
+            previousButton.interactable = true;
+        }
+
+        // disable "next" button if UI currently shows the last page
+        if (_currentPage == questionList.Length - 1)
+        {
+            nextButton.interactable = false;
+        }
+    }
+
+    // if the "previous" button is clicked, the UI will show the previous question
+    public void showPrevPage()
+    {
+        // decrease page number
+        _currentPage--;
+
+        // if page number is out ouf bounds, reset to min page number
+        if (_currentPage < 0)
+        {
+            _currentPage = 0;
+        }
+
+        // display question according to page number
+        shownQuestion.text = questionList[_currentPage];
+
+        // disable "previous" button if there is no previous page
+        if (_currentPage == 0)
+        {
+            previousButton.interactable = false;
+        }
+
+        // disable "close" button if UI currently does not show the last page
+        if (_currentPage < questionList.Length - 1)
+        {
+            nextButton.interactable = true;
+            confirmButton.interactable = false;
+        }
+    }
+
+    // saves the index of the selected radio button of the current page (has to be called right before switching a page)
+    public void saveChoices ()
+    {
+        if (options[0].isOn)
+        {
+            _choiceOnPage[_currentPage] = 0;
+        }
+        else if (options[1].isOn)
+        {
+            _choiceOnPage[_currentPage] = 1;
+        }
+        else if (options[2].isOn)
+        {
+            _choiceOnPage[_currentPage] = 2;
+        }
+        else if (options[3].isOn)
+        {
+            _choiceOnPage[_currentPage] = 3;
+        }
+        else if (options[4].isOn)
+        {
+            _choiceOnPage[_currentPage] = 4;
+        }
+        // default case: no radio button is selected
+        else
+        {
+            _choiceOnPage[_currentPage] = -1;
+        }
+    }
+
+    // turns on the radio button previously selected on the next page (has to be called right after switching the page)
+    public void loadChoicesOfNextPage()
+    {
+        // turn off selected radio button of old page (only if there has been made a choice on the old page)
+        if (_choiceOnPage[_currentPage] <= -1)
+        {
+            if (_choiceOnPage[_currentPage - 1] >= 0)
+            {
+                options[_choiceOnPage[_currentPage - 1]].isOn = false;
+            }
+        }
+        // turn on selected radio button of new page (only if there has been made a choice on this page before)
+        else
+        {
+           
+                options[_choiceOnPage[_currentPage]].isOn = true;
+        }
+    }
+
+    // turns on the radio button previously selected on the previous page (has to be called right after switching the page)
+    public void loadChoicesOfPreviousPage()
+    {
+        // turn off selected radio button of old page (only if there has been made a choice on the old page)
+        if (_choiceOnPage[_currentPage] <= -1)
+        {
+            if (_choiceOnPage[_currentPage + 1] >= 0)
+            {
+                options[_choiceOnPage[_currentPage + 1]].isOn = false;
+            }
+        }
+        // turn on selected radio button of new page (only if there has been made a choice on this page before)
+        else
+        {
+
+            options[_choiceOnPage[_currentPage]].isOn = true;
+        }
     }
 }
