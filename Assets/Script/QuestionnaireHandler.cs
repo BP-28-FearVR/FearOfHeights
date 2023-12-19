@@ -24,7 +24,6 @@ public class QuestionnaireHandler : MonoBehaviour
     private int[] _choiceOnPage;
     private bool _isEveryQuestionAnswered = false;
 
-
     // check if there has been entered a question via the input field in the editor
     // if so, show the first question on the questionnaire UI, else initialize the question array with an empty string
     // UI always starts displaying page 0
@@ -92,8 +91,6 @@ public class QuestionnaireHandler : MonoBehaviour
         shownQuestion.text = questionList[_currentPage];
         
         previousButton.interactable = true;
-
-        
 
         // disable "next" button if UI currently shows the last page
         if (_currentPage == questionList.Length - 1)
@@ -170,7 +167,6 @@ public class QuestionnaireHandler : MonoBehaviour
         // turn on selected radio button of new page (only if there has been made a choice on this page before)
         else
         {
-           
                 options[_choiceOnPage[_currentPage]].isOn = true;
         }
     }
@@ -189,7 +185,6 @@ public class QuestionnaireHandler : MonoBehaviour
         // turn on selected radio button of new page (only if there has been made a choice on this page before)
         else
         {
-
             options[_choiceOnPage[_currentPage]].isOn = true;
         }
     }
