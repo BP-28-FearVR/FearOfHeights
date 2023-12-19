@@ -7,20 +7,20 @@ public class CollisionTriggeredEventEditor : Editor
 {
     SerializedProperty detectUsing;
 
-    SerializedProperty _collidingTag;
+    SerializedProperty collidingTag;
 
-    SerializedProperty _collidingLayer;
+    SerializedProperty collidingLayer;
 
-    SerializedProperty _event;
+    SerializedProperty eventToCall;
 
     // OnEnable is called when the GameObject is loaded
     private void OnEnable()
     {
         // Find serialized Properties and store them
         detectUsing = serializedObject.FindProperty("detectUsing");
-        _collidingTag = serializedObject.FindProperty("_collidingTag");
-        _collidingLayer = serializedObject.FindProperty("_collidingLayer");
-        _event = serializedObject.FindProperty("_event");
+        collidingTag = serializedObject.FindProperty("collidingTag");
+        collidingLayer = serializedObject.FindProperty("collidingLayer");
+        eventToCall = serializedObject.FindProperty("eventToCall");
     }
 
     // OnInspectorGUI specifies the way the Inspector Editor should be drawn
@@ -40,13 +40,13 @@ public class CollisionTriggeredEventEditor : Editor
         // Show either Tag or Layer depending on the choosen Detection type
         if (collisionTriggeredEvent.detectUsing == CollisionTriggeredEvent.DetectUsing.Tag)
         {
-            EditorGUILayout.PropertyField(_collidingTag);
+            EditorGUILayout.PropertyField(collidingTag);
         }
         else
         {
-            EditorGUILayout.PropertyField(_collidingLayer);
+            EditorGUILayout.PropertyField(collidingLayer);
         }
-        EditorGUILayout.PropertyField(_event);
+        EditorGUILayout.PropertyField(eventToCall);
 
         serializedObject.ApplyModifiedProperties();
     }

@@ -7,26 +7,26 @@ public class CollisionTriggeredTeleportEditor : Editor
 {
     SerializedProperty detectUsing;
 
-    SerializedProperty _collidingTag;
+    SerializedProperty collidingTag;
 
-    SerializedProperty _collidingLayer;
+    SerializedProperty collidingLayer;
 
-    SerializedProperty _transformParent;
+    SerializedProperty transformParent;
 
-    SerializedProperty _vectorType;
+    SerializedProperty vectorType;
 
-    SerializedProperty _teleportVector;
+    SerializedProperty teleportVector;
 
     // OnEnable is called when the GameObject is loaded
     private void OnEnable()
     {
         // Find serialized Properties and store them
         detectUsing = serializedObject.FindProperty("detectUsing");
-        _collidingTag = serializedObject.FindProperty("_collidingTag");
-        _collidingLayer = serializedObject.FindProperty("_collidingLayer");
-        _transformParent = serializedObject.FindProperty("_transformParent");
-        _vectorType = serializedObject.FindProperty("_vectorType");
-        _teleportVector = serializedObject.FindProperty("_teleportVector");
+        collidingTag = serializedObject.FindProperty("collidingTag");
+        collidingLayer = serializedObject.FindProperty("collidingLayer");
+        transformParent = serializedObject.FindProperty("transformParent");
+        vectorType = serializedObject.FindProperty("vectorType");
+        teleportVector = serializedObject.FindProperty("teleportVector");
     }
 
     // OnInspectorGUI specifies the way the Inspector Editor should be drawn
@@ -46,15 +46,15 @@ public class CollisionTriggeredTeleportEditor : Editor
         // Show either Tag or Layer depending on the choosen Detection type
         if (collisionTriggeredTeleport.detectUsing == CollisionTriggeredTeleport.DetectUsing.Tag)
         {
-            EditorGUILayout.PropertyField(_collidingTag);
+            EditorGUILayout.PropertyField(collidingTag);
         }
         else
         {
-            EditorGUILayout.PropertyField(_collidingLayer);
+            EditorGUILayout.PropertyField(collidingLayer);
         }
-        EditorGUILayout.PropertyField(_transformParent);
-        EditorGUILayout.PropertyField(_vectorType);
-        EditorGUILayout.PropertyField(_teleportVector);
+        EditorGUILayout.PropertyField(transformParent);
+        EditorGUILayout.PropertyField(vectorType);
+        EditorGUILayout.PropertyField(teleportVector);
         
         serializedObject.ApplyModifiedProperties();
     }

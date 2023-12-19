@@ -5,8 +5,7 @@ using UnityEngine.Events;
 public class CollisionTriggeredEvent : CollisionTrigger
 {
     [Tooltip("The event to call if the specified collision occurs")]
-    [SerializeField] private UnityEvent _event;
-
+    [SerializeField] private UnityEvent eventToCall;
     // Start is called before the first frame update, which calls CollisionTrigger.CheckInput
     void Start()
     {
@@ -19,12 +18,12 @@ public class CollisionTriggeredEvent : CollisionTrigger
         // Detect if the other GameObject has the correct Tag or Layer (depending on the choosen detection type)
         if (detectUsing == DetectUsing.Tag)
         {
-            if (!other.gameObject.CompareTag(_collidingTag)) return;
+            if (!other.gameObject.CompareTag(collidingTag)) return;
         }
         else
         {
             if (other.gameObject.layer != _collidingLayerInt) return;
         }
-        _event.Invoke();
+        eventToCall.Invoke();
     }
 }

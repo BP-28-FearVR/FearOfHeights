@@ -12,13 +12,13 @@ public class CollisionTriggeredTeleport : CollisionTrigger
     }
 
     [Tooltip("Determine if the colliding Object or its parent should be transformed")]
-    [SerializeField] private bool _transformParent = false;
+    [SerializeField] private bool transformParent = false;
 
     [Tooltip("Whether the Teleportation should be relative to the objects current position or absolute")]
-    [SerializeField] private TeleportMode _vectorType = TeleportMode.Relative;
+    [SerializeField] private TeleportMode vectorType = TeleportMode.Relative;
 
     [Tooltip("The Vector to be applied to the specified GameObject")]
-    [SerializeField] private Vector3 _teleportVector = Vector3.zero;
+    [SerializeField] private Vector3 teleportVector = Vector3.zero;
 
     // Start is called before the first frame update, which calls CollisionTrigger.CheckInput
     void Start()
@@ -32,7 +32,7 @@ public class CollisionTriggeredTeleport : CollisionTrigger
         // Detect if the other GameObject has the correct Tag or Layer (depending on the choosen detection type)
         if (detectUsing == DetectUsing.Tag)
         {
-            if (!other.gameObject.CompareTag(_collidingTag)) return;
+            if (!other.gameObject.CompareTag(collidingTag)) return;
         } else
         {
             if (other.gameObject.layer != _collidingLayerInt) return;
@@ -40,7 +40,7 @@ public class CollisionTriggeredTeleport : CollisionTrigger
 
         // Get the Transform component of the actual GameObject to teleport
         Transform _gameObjectToTeleport;
-        if(_transformParent)
+        if(transformParent)
         {
             _gameObjectToTeleport = other.gameObject.transform.parent;
         } else
@@ -48,12 +48,12 @@ public class CollisionTriggeredTeleport : CollisionTrigger
             _gameObjectToTeleport = other.gameObject.transform;
         }
         // Teleport relative to the current position of the GameObject or the absolute position in the World
-        if(_vectorType == TeleportMode.Relative)
+        if(vectorType == TeleportMode.Relative)
         {
-            _gameObjectToTeleport.Translate(_teleportVector, Space.World);
+            _gameObjectToTeleport.Translate(teleportVector, Space.World);
         } else
         {
-            _gameObjectToTeleport.position = _teleportVector;
+            _gameObjectToTeleport.position = teleportVector;
         }
     }
 }
