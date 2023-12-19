@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows.WebCam;
 
 public class OpenDoor : MonoBehaviour
 {
@@ -17,6 +15,18 @@ public class OpenDoor : MonoBehaviour
     private bool _isDoorMoving = false;
     private bool _isDoorOpened = false;
 
+    // Opens door if closed and closes door if opened
+    public void Interact()
+    {
+        if (!_isDoorOpened)
+        {
+            Open();
+        }
+        else
+        {
+            Close();
+        }
+    }
 
     // Opens the door if it's not moving or open
     public void Open()
@@ -41,20 +51,20 @@ public class OpenDoor : MonoBehaviour
     // Rotates the door to a given target angle
     IEnumerator RotateDoor(float target)
     {
+        // Start Rotation
         _isDoorMoving = true;
-
-        float initialRotation = door.transform.rotation.eulerAngles.z;
+        Quaternion initialRotation = door.transform.rotation;
         float elapsedTime = 0.0f;
 
         // Calculates the new Rotation for each tick until the animation time has elapsed and reached the target angle
         while (elapsedTime < 1.0f)
         {
-            float newRotation = Mathf.Lerp(initialRotation, target, elapsedTime);
-            door.transform.rotation = Quaternion.Euler(-90, 0, newRotation);
+            door.transform.rotation = Quaternion.Lerp(initialRotation, Quaternion.Euler(-90, 0, target), elapsedTime);
             elapsedTime += Time.deltaTime * openSpeed;
             yield return null;
         }
 
+        // Apply final rotation
         door.transform.rotation = Quaternion.Euler(-90, 0, target);
         _isDoorMoving = false;
     }
