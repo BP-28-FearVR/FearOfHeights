@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem.Android;
 using UnityEngine.UI;
 
 public class QuestionnaireHandler : MonoBehaviour
@@ -26,6 +22,7 @@ public class QuestionnaireHandler : MonoBehaviour
 
     // _choices[i] saves the index of which radio button is selected on page i, if none is selected _choices[i] contains -1
     private int[] _choiceOnPage;
+    private bool _isEveryQuestionAnswered = false;
 
 
     // check if there has been entered a question via the input field in the editor
@@ -38,7 +35,7 @@ public class QuestionnaireHandler : MonoBehaviour
         if (questionList.Length <= 0)
         {
             questionList = new string[1];
-            questionList[0] = "No Question";
+            questionList[0] = "";
         }
         shownQuestion.text = questionList[0];
 
@@ -62,13 +59,13 @@ public class QuestionnaireHandler : MonoBehaviour
         }
     }
 
-    // if last page is reached and a choice has been made, the confirm button will be enabled
-    public void enableConfirm()
+    // if last page is reached and a choice has been made on every page, the confirm button will be enabled
+    public void EnableConfirm()
     {
         if (_currentPage == questionList.Length - 1)
         {
-            saveChoices();
-            if (_choiceOnPage[_currentPage] >= 0)
+            SaveChoices();
+            if (_isEveryQuestionAnswered)
             {
                 confirmButton.interactable = true;
             }
@@ -80,7 +77,7 @@ public class QuestionnaireHandler : MonoBehaviour
     }
 
     // if the "next" button is clicked, the UI will show the next question in line
-    public void showNextPage()
+    public void ShowNextPage()
     {
         // increase page number
         _currentPage++;
@@ -93,16 +90,10 @@ public class QuestionnaireHandler : MonoBehaviour
 
         // display question according to page number
         shownQuestion.text = questionList[_currentPage];
+        
+        previousButton.interactable = true;
 
-        // disable "previous" button if there is no previous page
-        if (_currentPage == 0)
-        {
-            previousButton.interactable = false;
-        }
-        else
-        {
-            previousButton.interactable = true;
-        }
+        
 
         // disable "next" button if UI currently shows the last page
         if (_currentPage == questionList.Length - 1)
@@ -112,7 +103,7 @@ public class QuestionnaireHandler : MonoBehaviour
     }
 
     // if the "previous" button is clicked, the UI will show the previous question
-    public void showPrevPage()
+    public void ShowPrevPage()
     {
         // decrease page number
         _currentPage--;
@@ -132,7 +123,7 @@ public class QuestionnaireHandler : MonoBehaviour
             previousButton.interactable = false;
         }
 
-        // disable "close" button if UI currently does not show the last page
+        // disable "confirm" button if UI currently does not show the last page
         if (_currentPage < questionList.Length - 1)
         {
             nextButton.interactable = true;
@@ -141,37 +132,32 @@ public class QuestionnaireHandler : MonoBehaviour
     }
 
     // saves the index of the selected radio button of the current page (has to be called right before switching a page)
-    public void saveChoices ()
+    public void SaveChoices ()
     {
-        if (options[0].isOn)
+        for (int i = 0; i < options.Length; i++)
         {
-            _choiceOnPage[_currentPage] = 0;
-        }
-        else if (options[1].isOn)
-        {
-            _choiceOnPage[_currentPage] = 1;
-        }
-        else if (options[2].isOn)
-        {
-            _choiceOnPage[_currentPage] = 2;
-        }
-        else if (options[3].isOn)
-        {
-            _choiceOnPage[_currentPage] = 3;
-        }
-        else if (options[4].isOn)
-        {
-            _choiceOnPage[_currentPage] = 4;
-        }
-        // default case: no radio button is selected
-        else
-        {
+            if (options[i].isOn)
+            {
+                _choiceOnPage[_currentPage] = i;
+                break;
+            }
+            // if no choice has been made:
             _choiceOnPage[_currentPage] = -1;
+        }
+
+        _isEveryQuestionAnswered = true;
+        for (int i = 0; i < questionList.Length; i++)
+        {
+            if (_choiceOnPage[i] <= -1)
+            {
+                _isEveryQuestionAnswered = false;
+                break;
+            }
         }
     }
 
     // turns on the radio button previously selected on the next page (has to be called right after switching the page)
-    public void loadChoicesOfNextPage()
+    public void LoadChoicesOfNextPage()
     {
         // turn off selected radio button of old page (only if there has been made a choice on the old page)
         if (_choiceOnPage[_currentPage] <= -1)
@@ -190,7 +176,7 @@ public class QuestionnaireHandler : MonoBehaviour
     }
 
     // turns on the radio button previously selected on the previous page (has to be called right after switching the page)
-    public void loadChoicesOfPreviousPage()
+    public void LoadChoicesOfPreviousPage()
     {
         // turn off selected radio button of old page (only if there has been made a choice on the old page)
         if (_choiceOnPage[_currentPage] <= -1)
