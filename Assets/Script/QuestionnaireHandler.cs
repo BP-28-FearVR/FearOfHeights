@@ -131,6 +131,8 @@ public class QuestionnaireHandler : MonoBehaviour
     // saves the index of the selected radio button of the current page (has to be called right before switching a page)
     public void SaveChoices ()
     {
+        // set base value - will be overwritten if a choice was made:
+        _choiceOnPage[_currentPage] = -1;
         for (int i = 0; i < options.Length; i++)
         {
             if (options[i].isOn)
@@ -138,8 +140,6 @@ public class QuestionnaireHandler : MonoBehaviour
                 _choiceOnPage[_currentPage] = i;
                 break;
             }
-            // if no choice has been made:
-            _choiceOnPage[_currentPage] = -1;
         }
 
         _isEveryQuestionAnswered = true;
