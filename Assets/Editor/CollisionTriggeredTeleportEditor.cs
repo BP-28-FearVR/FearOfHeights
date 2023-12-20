@@ -13,9 +13,11 @@ public class CollisionTriggeredTeleportEditor : Editor
 
     SerializedProperty transformParent;
 
-    SerializedProperty vectorType;
+    SerializedProperty teleportType;
 
     SerializedProperty teleportVector;
+
+    SerializedProperty teleportTransformDestination;
 
     // OnEnable is called when the GameObject is loaded
     private void OnEnable()
@@ -25,8 +27,9 @@ public class CollisionTriggeredTeleportEditor : Editor
         collidingTag = serializedObject.FindProperty("collidingTag");
         collidingLayer = serializedObject.FindProperty("collidingLayer");
         transformParent = serializedObject.FindProperty("transformParent");
-        vectorType = serializedObject.FindProperty("vectorType");
+        teleportType = serializedObject.FindProperty("teleportType");
         teleportVector = serializedObject.FindProperty("teleportVector");
+        teleportTransformDestination = serializedObject.FindProperty("teleportTransformDestination");
     }
 
     // OnInspectorGUI specifies the way the Inspector Editor should be drawn
@@ -53,8 +56,15 @@ public class CollisionTriggeredTeleportEditor : Editor
             EditorGUILayout.PropertyField(collidingLayer);
         }
         EditorGUILayout.PropertyField(transformParent);
-        EditorGUILayout.PropertyField(vectorType);
-        EditorGUILayout.PropertyField(teleportVector);
+        EditorGUILayout.PropertyField(teleportType);
+        if (collisionTriggeredTeleport.teleportType != CollisionTriggeredTeleport.TeleportMode.ToGameObject)
+        {
+            EditorGUILayout.PropertyField(teleportVector);
+        }
+        else
+        {
+            EditorGUILayout.PropertyField(teleportTransformDestination);
+        }
         
         serializedObject.ApplyModifiedProperties();
     }
