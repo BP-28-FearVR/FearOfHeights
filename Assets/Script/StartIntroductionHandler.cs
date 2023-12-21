@@ -12,29 +12,29 @@ public class StartIntroductionHandler : MonoBehaviour
     // creates an accessible component in the editor, which allows to add as many Text pages to the Introduction as one would like
     // press "+" in the according component in the editor to add a new field for text input for each Page
     [TextArea(15, 20)]
-    [SerializeField] private string[] textpageList;     
+    [SerializeField] private string[] textPageList;     
 
-    // text field of the UI element, which is used to show the currently selected question
+    // text field of the UI element, which is used to show the currently selected page
     [SerializeField] private TextMeshProUGUI textDisplay;
 
-    // check if there has been entered a question via the input field in the editor
-    // if so, show the first question on the questionnaire UI, else initialize the question array with an empty string
+    // check if there has been entered a page via the input field in the editor
+    // if so, show the first page on the UI, else initialize the page array with an empty string
     // UI always starts displaying page 0
     void Start()
     {
         // set up first page
         _currentPage = 0;
-        if (textpageList.Length <= 0)
+        if (textPageList.Length <= 0)
         {
-            textpageList = new string[1];
-            textpageList[0] = "";
+            textPageList = new string[1];
+            textPageList[0] = "";
         }
-        textDisplay.text = textpageList[0];
+        textDisplay.text = textPageList[0];
 
         // set up buttons
-        MaybeEnableStartButton();
+        CheckIfShouldEnableStartButton();
         previousButton.interactable = false;
-        if (textpageList.Length <= 1)
+        if (textPageList.Length <= 1)
         {
             nextButton.interactable = false;
         }
@@ -45,9 +45,9 @@ public class StartIntroductionHandler : MonoBehaviour
     }
 
     // if on the last Page enable StartButton
-    public void MaybeEnableStartButton()
+    public void CheckIfShouldEnableStartButton()
     {
-        if (_currentPage+1 == textpageList.Length)
+        if (_currentPage+1 == textPageList.Length)
         {
             startButton.interactable = true;
         } else
@@ -56,33 +56,33 @@ public class StartIntroductionHandler : MonoBehaviour
         }
     }
 
-    // if the "next" button is clicked, the UI will show the next question in line
+    // if the "next" button is clicked, the UI will show the next page in line
     public void ShowNextPage()
     {
         // increase page number
         _currentPage++;
 
         // if page number is out of bounds, reset to max page number
-        if (_currentPage >= textpageList.Length)
+        if (_currentPage >= textPageList.Length)
         {
-            _currentPage = textpageList.Length - 1;
+            _currentPage = textPageList.Length - 1;
         }
 
         // display question according to page number
-        textDisplay.text = textpageList[_currentPage];
+        textDisplay.text = textPageList[_currentPage];
         
         previousButton.interactable = true;
 
         // disable "next" button if UI currently shows the last page
-        if (_currentPage == textpageList.Length - 1)
+        if (_currentPage == textPageList.Length - 1)
         {
             nextButton.interactable = false;
         }
 
-        MaybeEnableStartButton();
+        CheckIfShouldEnableStartButton();
     }
 
-    // if the "previous" button is clicked, the UI will show the previous question
+    // if the "previous" button is clicked, the UI will show the previous page
     public void ShowPrevPage()
     {
         // decrease page number
@@ -95,7 +95,7 @@ public class StartIntroductionHandler : MonoBehaviour
         }
 
         // display question according to page number
-        textDisplay.text = textpageList[_currentPage];
+        textDisplay.text = textPageList[_currentPage];
 
         // disable "previous" button if there is no previous page
         if (_currentPage == 0)
@@ -104,13 +104,13 @@ public class StartIntroductionHandler : MonoBehaviour
         }
 
         // disable "confirm" button if UI currently does not show the last page
-        if (_currentPage < textpageList.Length - 1)
+        if (_currentPage < textPageList.Length - 1)
         {
             nextButton.interactable = true;
             startButton.interactable = false;
         }
 
-        MaybeEnableStartButton();
+        CheckIfShouldEnableStartButton();
     }
 
 }

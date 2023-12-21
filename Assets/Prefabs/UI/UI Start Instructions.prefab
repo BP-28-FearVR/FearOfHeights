@@ -407,7 +407,7 @@ MonoBehaviour:
   nextButton: {fileID: 1223277234014378222}
   previousButton: {fileID: 889471641132435779}
   startButton: {fileID: 5939709517378100934}
-  textpageList:
+  textPageList:
   - "\rWelcome to our experiment.\n\nIn this VR experience, there will be a height
     exposure in the game, which might cause you the feeling of fear. \r\n\nPlease
     point to the \">\" and pressing the button beneath your index finger.\n\n"
