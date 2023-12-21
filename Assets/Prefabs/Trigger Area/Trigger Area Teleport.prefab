@@ -76,8 +76,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectUsing: 0
-  _collidingTag: Untagged
-  _collidingLayer: Default
-  _transformParent: 0
-  _vectorType: 0
-  _teleportVector: {x: 0, y: 0, z: 0}
+  collidingTag: Untagged
+  collidingLayer: Default
+  transformParent: 0
+  teleportType: 0
+  teleportVector: {x: 0, y: 0, z: 0}
+  teleportTransformDestination: {fileID: 0}

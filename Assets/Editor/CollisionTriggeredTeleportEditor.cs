@@ -13,9 +13,11 @@ public class CollisionTriggeredTeleportEditor : Editor
 
     SerializedProperty transformParent;
 
-    SerializedProperty vectorType;
+    SerializedProperty teleportType;
 
     SerializedProperty teleportVector;
+
+    SerializedProperty teleportTransformDestination;
 
     // OnEnable is called when the GameObject is loaded
     private void OnEnable()
@@ -25,8 +27,9 @@ public class CollisionTriggeredTeleportEditor : Editor
         collidingTag = serializedObject.FindProperty("collidingTag");
         collidingLayer = serializedObject.FindProperty("collidingLayer");
         transformParent = serializedObject.FindProperty("transformParent");
-        vectorType = serializedObject.FindProperty("vectorType");
+        teleportType = serializedObject.FindProperty("teleportType");
         teleportVector = serializedObject.FindProperty("teleportVector");
+        teleportTransformDestination = serializedObject.FindProperty("teleportTransformDestination");
     }
 
     // OnInspectorGUI specifies the way the Inspector Editor should be drawn
@@ -53,9 +56,20 @@ public class CollisionTriggeredTeleportEditor : Editor
             EditorGUILayout.PropertyField(collidingLayer);
         }
         EditorGUILayout.PropertyField(transformParent);
-        EditorGUILayout.PropertyField(vectorType);
-        EditorGUILayout.PropertyField(teleportVector);
-        
+        EditorGUILayout.PropertyField(teleportType);
+        // If the Teleport Mode needs the Teleport Vector, display it
+        if (collisionTriggeredTeleport.teleportType == CollisionTriggeredTeleport.TeleportMode.Relative ||
+            collisionTriggeredTeleport.teleportType == CollisionTriggeredTeleport.TeleportMode.Absolute)
+        {
+            EditorGUILayout.PropertyField(teleportVector);
+        }
+        // If the Teleport Mode is ToGameObject, display a field to insert the GameObject into
+        else if(collisionTriggeredTeleport.teleportType == CollisionTriggeredTeleport.TeleportMode.ToGameObject)
+        {
+            EditorGUILayout.PropertyField(teleportTransformDestination);
+        }
+        // Teleport Mode ResetToParent need no further field 
+
         serializedObject.ApplyModifiedProperties();
     }
 }
