@@ -8,7 +8,7 @@ public class CollisionTriggeredTeleport : CollisionTrigger
 
     public enum TeleportMode
     {
-        Relative, Absolute, ToGameObject
+        Relative, Absolute, ToGameObject, ResetToParent
     }
 
     [Tooltip("Determine if the colliding Object or its parent should be transformed")]
@@ -33,7 +33,7 @@ public class CollisionTriggeredTeleport : CollisionTrigger
         {
             if (teleportTransformDestination == null) throw new System.Exception("No GameObject to teleport to set in Trigger Area Teleport GameObject");
             teleportVector = teleportTransformDestination.position;
-        }
+        } 
     }
 
     // OnTriggerEnter is called every time this GameObject's collider detects a collision with another GameObject
@@ -57,8 +57,18 @@ public class CollisionTriggeredTeleport : CollisionTrigger
         {
             _gameObjectToTeleport = other.gameObject.transform;
         }
+
+        if (teleportType == TeleportMode.ResetToParent)
+        {
+            if (other.gameObject.transform.parent == null) throw new System.Exception("No Parent for GameObject found to teleport to in Trigger Area Teleport GameObject");
+            Rigidbody otherRigidBody = other.gameObject.GetComponent<Rigidbody>();
+            if(otherRigidBody == null) throw new System.Exception("No RigidBody for GameObject found in Trigger Area Teleport GameObject");
+            teleportVector = other.gameObject.transform.parent.position;
+            otherRigidBody.velocity = Vector3.zero;
+        }
+
         // Teleport relative to the current position of the GameObject, the absolute position or another GameObject in the World
-        if(teleportType == TeleportMode.Relative)
+        if (teleportType == TeleportMode.Relative)
         {
             _gameObjectToTeleport.Translate(teleportVector, Space.World);
         } 

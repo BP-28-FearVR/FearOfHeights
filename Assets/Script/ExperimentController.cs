@@ -1,8 +1,16 @@
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class ExperimentController : MonoBehaviour
 {
+    [Tooltip("The SceneChanger to call if the experiment has ended")]
+    [SerializeField] private SceneChanger sceneChanger;
+
+    [Tooltip("The Scene to switch to if the experiment has ended")]
+    [SerializeField] private SceneAsset nextScene;
+
     [Tooltip("Capsules each containing 1 Item that is part of the Experiment, will be spawned and must be collected")]
     [SerializeField] private List<GameObject> experimentItems;
 
@@ -25,13 +33,11 @@ public class ExperimentController : MonoBehaviour
     {
         _collidingLayerInt = LayerMask.NameToLayer(_collidingLayer);
         // Does a layer with that name exist (-1 means an non-existant layer)
-        if (_collidingLayerInt == -1)
+        if (_collidingLayerInt == -1) throw new System.Exception("Unregistered Layer '" + _collidingLayer + "' used in ExperimentController");
+        if (sceneChanger == null) throw new System.Exception("No SceneChanger instance passed for ExperimentController");
+        foreach (GameObject currentObject in experimentItems)
         {
-            throw new System.Exception("Unregistered Layer '" + _collidingLayer + "' used in ExperimentController");
-        }
-        foreach(GameObject currentObject in experimentItems)
-        {
-            if (currentObject.GetComponent<ExperimentItem>() == null) throw new System.Exception("GameObject passed to List that is not an ExperimentItem");
+            if (!IsExperimentItem(currentObject)) throw new System.Exception("GameObject passed to List that is not an ExperimentItem");
         }
         enumerator = experimentItems.GetEnumerator();
         enumerator.MoveNext();
@@ -42,8 +48,7 @@ public class ExperimentController : MonoBehaviour
     {
         if (other.gameObject == null) return;
 
-        ExperimentItem item = other.gameObject.GetComponent<ExperimentItem>();
-        if(item != null)
+        if(IsExperimentItem(other.gameObject))
         {
             _itemsCollected++;
             if(CheckIfExperimentEnded())
@@ -63,8 +68,7 @@ public class ExperimentController : MonoBehaviour
     {
         if (other.gameObject == null) return;
 
-        ExperimentItem item = other.gameObject.GetComponent<ExperimentItem>();
-        if (item != null)
+        if (IsExperimentItem(other.gameObject))
         {
             _itemsCollected--;
         }
@@ -75,10 +79,15 @@ public class ExperimentController : MonoBehaviour
         return (_IsExperimentOngoing && experimentItems.Count == _itemsCollected);
     }
 
+    private bool IsExperimentItem(GameObject objectToCheck)
+    {
+        return objectToCheck.layer == _collidingLayerInt;
+    }
+
     private void EndExperiment()
     {
         _IsExperimentOngoing = false;
-        Debug.Log("Experiment has ended");
+        sceneChanger.FadeToScene(nextScene);
     }
 
     public void SpawnNextItem()

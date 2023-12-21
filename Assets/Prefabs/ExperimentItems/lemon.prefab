@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8067791350535017942}
   - component: {fileID: 3610047552092149635}
   - component: {fileID: 8210247269087142215}
-  - component: {fileID: 6182642658142481977}
   m_Layer: 7
   m_Name: lemon
   m_TagString: Untagged
@@ -289,18 +288,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &6182642658142481977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638444836145330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9081976995ff02e49a7a774103716a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &541089366408359253
 GameObject:
   m_ObjectHideFlags: 0

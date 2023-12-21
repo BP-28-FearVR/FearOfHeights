@@ -57,11 +57,12 @@ public class CollisionTriggeredTeleportEditor : Editor
         }
         EditorGUILayout.PropertyField(transformParent);
         EditorGUILayout.PropertyField(teleportType);
-        if (collisionTriggeredTeleport.teleportType != CollisionTriggeredTeleport.TeleportMode.ToGameObject)
+        if (collisionTriggeredTeleport.teleportType == CollisionTriggeredTeleport.TeleportMode.Relative ||
+            collisionTriggeredTeleport.teleportType == CollisionTriggeredTeleport.TeleportMode.Absolute)
         {
             EditorGUILayout.PropertyField(teleportVector);
         }
-        else
+        else if(collisionTriggeredTeleport.teleportType == CollisionTriggeredTeleport.TeleportMode.ToGameObject)
         {
             EditorGUILayout.PropertyField(teleportTransformDestination);
         }
