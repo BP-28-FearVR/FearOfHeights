@@ -15,7 +15,7 @@ public class ExperimentController : MonoBehaviour
     [SerializeField] private List<GameObject> experimentItems;
 
     // Enumerator to enumerate thorugh all the Experiment Items and spawn them
-    private List<GameObject>.Enumerator enumerator;
+    private List<GameObject>.Enumerator _enumerator;
 
     private int _itemsSpawned = 0;
 
@@ -45,8 +45,8 @@ public class ExperimentController : MonoBehaviour
         }
 
         // Set Enumerator. First Item is null, Start at the second item so it has to move to the first item
-        enumerator = experimentItems.GetEnumerator();
-        enumerator.MoveNext();
+        _enumerator = experimentItems.GetEnumerator();
+        _enumerator.MoveNext();
 
         //Spawn first Experiment Item
         SpawnNextItem();
@@ -109,8 +109,8 @@ public class ExperimentController : MonoBehaviour
     // Activate the next Experiment Item and move the Enumerator onto the next Experiment Item
     public void SpawnNextItem()
     {
-        enumerator.Current.SetActive(true);
-        enumerator.MoveNext();
+        _enumerator.Current.SetActive(true);
+        _enumerator.MoveNext();
         _itemsSpawned++;
     }
 }
