@@ -57,16 +57,19 @@ public class CollisionTriggeredTeleportEditor : Editor
         }
         EditorGUILayout.PropertyField(transformParent);
         EditorGUILayout.PropertyField(teleportType);
+        // If the Teleport Mode needs the Teleport Vector, display it
         if (collisionTriggeredTeleport.teleportType == CollisionTriggeredTeleport.TeleportMode.Relative ||
             collisionTriggeredTeleport.teleportType == CollisionTriggeredTeleport.TeleportMode.Absolute)
         {
             EditorGUILayout.PropertyField(teleportVector);
         }
+        // If the Teleport Mode is ToGameObject, display a field to insert the GameObject into
         else if(collisionTriggeredTeleport.teleportType == CollisionTriggeredTeleport.TeleportMode.ToGameObject)
         {
             EditorGUILayout.PropertyField(teleportTransformDestination);
         }
-        
+        // Teleport Mode ResetToParent need no further field 
+
         serializedObject.ApplyModifiedProperties();
     }
 }

@@ -24,7 +24,7 @@ public class CollisionTriggeredTeleport : CollisionTrigger
     [Tooltip("The Transform to teleport the specified GameObject to")]
     [SerializeField] private Transform teleportTransformDestination;
 
-    // Start is called before the first frame update, which calls CollisionTrigger.CheckInput
+    // Start is called before the first frame update, which calls CollisionTrigger.CheckInput and checks the Teleport Destination if the Teleport Mode ToGameObject is choosen
     void Start()
     {
         base.CheckInput();
@@ -58,21 +58,24 @@ public class CollisionTriggeredTeleport : CollisionTrigger
             _gameObjectToTeleport = other.gameObject.transform;
         }
 
+        //If the Teleport Mode is ResetToParent, check if Parent and Rigidbody to reset velocity with exists
         if (teleportType == TeleportMode.ResetToParent)
         {
             if (other.gameObject.transform.parent == null) throw new System.Exception("No Parent for GameObject found to teleport to in Trigger Area Teleport GameObject");
+
             Rigidbody otherRigidBody = other.gameObject.GetComponent<Rigidbody>();
             if(otherRigidBody == null) throw new System.Exception("No RigidBody for GameObject found in Trigger Area Teleport GameObject");
-            teleportVector = other.gameObject.transform.parent.position;
+
             otherRigidBody.velocity = Vector3.zero;
+            teleportVector = other.gameObject.transform.parent.position;
         }
 
-        // Teleport relative to the current position of the GameObject, the absolute position or another GameObject in the World
+        // Teleport relative to the current position of the GameObject
         if (teleportType == TeleportMode.Relative)
         {
             _gameObjectToTeleport.Translate(teleportVector, Space.World);
         } 
-        //this path handles both absolute and teleportToGameObject
+        // Teleport using Teleport Mode Absolute, ToGameObject and ResetToParent
         else
         {
             _gameObjectToTeleport.position = teleportVector;
