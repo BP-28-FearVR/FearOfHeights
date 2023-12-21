@@ -1,52 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Tutorials.Core.Editor;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+// Used to call the SceneChanger after a specified time in order to switch to a specified Scene
 public class AutoSceneChanger : MonoBehaviour
 {
     [Tooltip("The Scene Changer that is used for the Scene transition.")]
-    [SerializeField] private SceneChanger _sceneChanger;
+    [SerializeField] private SceneChanger sceneChanger;
 
     [Tooltip("The time (in seconds) to wait for the AutoSceneTransition to start.")] 
-    [SerializeField] private float _time = 20.0f;
-
+    [SerializeField] private float time = 20.0f;
 
     // Stores the TargetScene Name
-    private static string _targetSceneName;
+    [Tooltip("The time (in seconds) to wait for the AutoSceneTransition to start.")]
+    [SerializeField] private SceneAsset targetScene;
 
     // Setter for TargetScene Name
-    static void SetTargetScene(string name)
+    public void SetTargetScene(SceneAsset sceneAsset)
     {
-        _targetSceneName = name;
-    }
-
-    static void SetTargetScene(Scene scene)
-    {
-        SetTargetScene(scene.name);
-    }
-
-    static void SetTargetScene(SceneAsset sceneAsset)
-    {
-        SetTargetScene(sceneAsset.name);
+        targetScene = sceneAsset;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        if (_targetSceneName.IsNullOrEmpty())
-        {
-            _targetSceneName = "Scene2";
-        }
-
-        Invoke("OnTimerDone", _time);
+        Invoke("OnTimerDone", time);
     }
 
+    // Is called once the timer finishes
     void OnTimerDone()
     {
-        _sceneChanger.FadeToScene(_targetSceneName);
+        sceneChanger.FadeToScene(targetScene);
     }
 }
