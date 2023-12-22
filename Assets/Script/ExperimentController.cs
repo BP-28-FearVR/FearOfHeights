@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using UnityEditor;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 // Used to start, follow it's progress and end the experiment
@@ -9,7 +9,7 @@ public class ExperimentController : MonoBehaviour
     [SerializeField] private SceneChanger sceneChanger;
 
     [Tooltip("The Scene to switch to if the experiment has ended")]
-    [SerializeField] private SceneAsset nextScene;
+    [SerializeField] private SceneObject nextScene;
 
     [Tooltip("Empty GameObjects each containing 1 Item as child that is part of the Experiment, will be spawned and must be collected")]
     [SerializeField] private List<GameObject> experimentItems;

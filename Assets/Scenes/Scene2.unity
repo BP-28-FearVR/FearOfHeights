@@ -4674,7 +4674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneChanger: {fileID: 1167191787}
-  nextScene: {fileID: 102900000, guid: 07cfc3bb140989f448b7f3644e183102, type: 3}
+  nextScene:
+    m_SceneName: Scene3
   experimentItems:
   - {fileID: 1362972066}
   - {fileID: 451740235}
@@ -26600,6 +26601,10 @@ PrefabInstance:
       propertyPath: sceneChanger
       value: 
       objectReference: {fileID: 1167191787}
+    - target: {fileID: 3092147717381518224, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
+      propertyPath: targetScene.m_SceneName
+      value: Scene3
+      objectReference: {fileID: 0}
     - target: {fileID: 6498990178136129133, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.35000026

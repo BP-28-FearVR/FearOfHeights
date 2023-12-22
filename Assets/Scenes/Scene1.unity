@@ -568,6 +568,10 @@ PrefabInstance:
       propertyPath: sceneChanger
       value: 
       objectReference: {fileID: 1016234110}
+    - target: {fileID: 3092147717381518224, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
+      propertyPath: targetScene.m_SceneName
+      value: Scene2
+      objectReference: {fileID: 0}
     - target: {fileID: 6498990178136129133, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.4875069
