@@ -27,7 +27,9 @@ public class CollisionTriggeredTeleport : CollisionTrigger
     // Start is called before the first frame update, which calls CollisionTrigger.CheckInput and checks the Teleport Destination if the Teleport Mode ToGameObject is choosen
     void Start()
     {
+#if (UNITY_EDITOR)
         base.CheckInput();
+#endif
         // If this Trigger Area should teleport to a GameObject's Transform, set the Teleport Vector. If the GameObject is not set, throw an error
         if (teleportType == TeleportMode.ToGameObject)
         {

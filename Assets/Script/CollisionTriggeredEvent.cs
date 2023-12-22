@@ -9,7 +9,9 @@ public class CollisionTriggeredEvent : CollisionTrigger
     // Start is called before the first frame update, which calls CollisionTrigger.CheckInput
     void Start()
     {
+#if (UNITY_EDITOR)
         base.CheckInput();
+#endif
     }
 
     // OnTriggerEnter is called every time this GameObject's collider detects a collision with another GameObject

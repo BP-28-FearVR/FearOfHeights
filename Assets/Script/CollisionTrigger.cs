@@ -26,6 +26,7 @@ public abstract class CollisionTrigger : MonoBehaviour
     protected int _collidingLayerInt = -1;
 
     // Checks if the tag or layer (depending on the choosen detection type) exists
+#if (UNITY_EDITOR)
     protected void CheckInput()
     {
         if (detectUsing == DetectUsing.Tag)
@@ -46,4 +47,5 @@ public abstract class CollisionTrigger : MonoBehaviour
             }
         }
     }
+#endif
 }
