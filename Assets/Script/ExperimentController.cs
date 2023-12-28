@@ -9,7 +9,7 @@ public class ExperimentController : MonoBehaviour
     [SerializeField] private SceneChanger sceneChanger;
 
     [Tooltip("The Scene to switch to if the experiment has ended")]
-    [SerializeField] private SceneAsset nextScene;
+    [SerializeField] private SceneObject nextScene;
 
     [Tooltip("Empty GameObjects each containing 1 Item as child that is part of the Experiment, will be spawned and must be collected")]
     [SerializeField] private List<GameObject> experimentItems;
@@ -25,12 +25,16 @@ public class ExperimentController : MonoBehaviour
 
     private string _collidingLayer = "ExperimentItem";
 
+    [Tooltip("hi")]
+    [SerializeField] private Object testObject;
+
     // Layer comparison is done in int, calculation result of the layer conversion to int is saved
     private int _collidingLayerInt = -1;
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(testObject);
         _collidingLayerInt = LayerMask.NameToLayer(_collidingLayer);
         // Does a layer with that name exist (-1 means an non-existant layer)
         if (_collidingLayerInt == -1) throw new System.Exception("Unregistered Layer '" + _collidingLayer + "' used in ExperimentController");

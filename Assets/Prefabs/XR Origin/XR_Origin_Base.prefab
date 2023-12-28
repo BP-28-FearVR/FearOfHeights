@@ -230,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5069804545764655251}
   - component: {fileID: 6928681278363825419}
-  - component: {fileID: 3208202186506190335}
+  - component: {fileID: 3063184100380383598}
   m_Layer: 0
   m_Name: Scene Change Manager
   m_TagString: Untagged
@@ -275,7 +275,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3208202186506190335
+--- !u!114 &3063184100380383598
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
