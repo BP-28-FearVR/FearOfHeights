@@ -405,7 +405,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 07ef4935fd2a26b4ba79608d32076e03, type: 3}
 --- !u!114 &1016234110 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 850154635576332272, guid: 07ef4935fd2a26b4ba79608d32076e03, type: 3}
+  m_CorrespondingSourceObject: {fileID: 993910625697852257, guid: 07ef4935fd2a26b4ba79608d32076e03, type: 3}
   m_PrefabInstance: {fileID: 1016234109}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -556,6 +556,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3634474023492152222, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
+      propertyPath: time
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -3634474023492152222, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
+      propertyPath: sceneChanger
+      value: 
+      objectReference: {fileID: 1016234110}
+    - target: {fileID: -3634474023492152222, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
+      propertyPath: targetScene.m_SceneName
+      value: Scene2
+      objectReference: {fileID: 0}
     - target: {fileID: 2215303405486053068, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: m_Name
       value: AutoSceneChanger
@@ -567,7 +579,7 @@ PrefabInstance:
     - target: {fileID: 3092147717381518224, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: sceneChanger
       value: 
-      objectReference: {fileID: 1016234110}
+      objectReference: {fileID: 0}
     - target: {fileID: 6498990178136129133, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.4875069

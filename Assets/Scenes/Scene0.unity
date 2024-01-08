@@ -159,17 +159,6 @@ Transform:
   - {fileID: 876127597}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &275823580 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4592414552478374955, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
-  m_PrefabInstance: {fileID: 988287706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c796772cc95e05248bd45003f26ef4b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &299639867
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +277,17 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &353952728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4160419944751167674, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+  m_PrefabInstance: {fileID: 988287706}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c796772cc95e05248bd45003f26ef4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &395914418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296,6 +296,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1973284914890133400, guid: 1400ad8074815c241892f451e09f3fa4, type: 3}
+      propertyPath: sceneChanger
+      value: 
+      objectReference: {fileID: 353952728}
+    - target: {fileID: 1973284914890133400, guid: 1400ad8074815c241892f451e09f3fa4, type: 3}
+      propertyPath: targetScene.m_SceneName
+      value: Scene1
+      objectReference: {fileID: 0}
     - target: {fileID: 2241066915769448623, guid: 1400ad8074815c241892f451e09f3fa4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.049
@@ -342,33 +350,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5939709517378100934, guid: 1400ad8074815c241892f451e09f3fa4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5939709517378100934, guid: 1400ad8074815c241892f451e09f3fa4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 275823580}
+      objectReference: {fileID: 401679372}
     - target: {fileID: 5939709517378100934, guid: 1400ad8074815c241892f451e09f3fa4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FadeToScene
+      value: OnStartButtonPress
       objectReference: {fileID: 0}
     - target: {fileID: 5939709517378100934, guid: 1400ad8074815c241892f451e09f3fa4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneChanger, Assembly-CSharp
+      value: StartIntroductionHandler, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5939709517378100934, guid: 1400ad8074815c241892f451e09f3fa4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 102900000, guid: 8496baf0d1c193645952b0f1f4ca43e1, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5939709517378100934, guid: 1400ad8074815c241892f451e09f3fa4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEditor.SceneAsset, UnityEditor.CoreModule
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1400ad8074815c241892f451e09f3fa4, type: 3}
+--- !u!114 &401679372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1973284914890133400, guid: 1400ad8074815c241892f451e09f3fa4, type: 3}
+  m_PrefabInstance: {fileID: 395914418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e386ea94f03c8949a9e346de1a937db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &575282878
 PrefabInstance:
   m_ObjectHideFlags: 0
