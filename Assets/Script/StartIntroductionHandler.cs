@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class StartIntroductionHandler : MonoBehaviour
@@ -16,6 +17,15 @@ public class StartIntroductionHandler : MonoBehaviour
 
     // text field of the UI element, which is used to show the currently selected page
     [SerializeField] private TextMeshProUGUI textDisplay;
+
+
+    // Event when a page changes
+    [System.Serializable]
+    public class PageChangeEvent : UnityEvent<int>
+    {}
+
+    [Tooltip("Event that is Called when the page updates. (might not be different than before)")]
+    [SerializeField] private PageChangeEvent onPageChange;
 
     // check if there has been entered a page via the input field in the editor
     // if so, show the first page on the UI, else initialize the page array with an empty string
@@ -42,6 +52,9 @@ public class StartIntroductionHandler : MonoBehaviour
         {
             nextButton.interactable = true;
         }
+
+        //Call Event with Initial State
+        onPageChange.Invoke(_currentPage);
     }
 
     // if on the last Page enable StartButton
@@ -80,6 +93,9 @@ public class StartIntroductionHandler : MonoBehaviour
         }
 
         CheckIfShouldEnableStartButton();
+
+        //Notify Listners
+        onPageChange.Invoke(_currentPage);
     }
 
     // if the "previous" button is clicked, the UI will show the previous page
@@ -111,6 +127,9 @@ public class StartIntroductionHandler : MonoBehaviour
         }
 
         CheckIfShouldEnableStartButton();
+
+        //Notify Listners
+        onPageChange.Invoke(_currentPage);
     }
 
 }
