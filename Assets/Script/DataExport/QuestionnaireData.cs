@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -109,13 +110,16 @@ public class QuestionnaireData
         return sb.ToString();
     }
 
-    //Saves _data to questionnaire_sc-[Scene name]_pt-[ParticipantId].csv the Documents Folder
+    //Saves _data to questionnaire_sc-[Scene name]_pt-[ParticipantId]_[timestamp].csv the Documents Folder
     public void SaveToFile() {
-#if UNITY_ANDROID
+#if UNITY_EDITOR
+        string basePath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+#elif UNITY_ANDROID
         string basePath = "/sdcard/Documents/";
 #else
         string basePath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
 #endif
+
         Scene currentScene = SceneManager.GetActiveScene();
         string participantId = ParticipantIDHandler.ParticipantID;
         
@@ -124,6 +128,8 @@ public class QuestionnaireData
             .Append(currentScene.name)
             .Append("_pt-")
             .Append(participantId)
+            .Append("_")
+            .Append(DateTime.Now.ToString("yyyy-MM-dd\\THH:mm:ss\\Z"))
             .Append(".csv")
             .ToString();
 

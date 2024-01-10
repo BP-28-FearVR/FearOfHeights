@@ -148,7 +148,7 @@ public class QuestionnaireHandler : MonoBehaviour
             }
         }
 
-        _choiceOnPage.SafeToFile();
+        _choiceOnPage.SaveToFile();
     }
 
     // turns on the radio button previously selected on the next page (has to be called right after switching the page)
