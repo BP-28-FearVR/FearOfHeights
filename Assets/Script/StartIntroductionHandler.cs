@@ -24,6 +24,7 @@ public class StartIntroductionHandler : MonoBehaviour
     public class PageChangeEvent : UnityEvent<int>
     {}
 
+    [Tooltip("Event that is Called when the page updates. (might not be different then before)")]
     [SerializeField] private PageChangeEvent onPageChange;
 
     // check if there has been entered a page via the input field in the editor
