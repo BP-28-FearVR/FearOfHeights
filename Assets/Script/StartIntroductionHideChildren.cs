@@ -20,7 +20,7 @@ public class StartIntroductionHideChildren : MonoBehaviour
         SetActiveChildren(newPage >= actionPage);
     }
 
-    //Sets the active state of the Children to the value of 'active'
+    //Sets the active state of the Children to the value of 'shouldBeActive'
     private void SetActiveChildren(Boolean shouldBeActive)
     {
         //Assuming parent is the parent game object
