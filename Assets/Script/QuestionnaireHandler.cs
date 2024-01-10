@@ -51,7 +51,7 @@ public class QuestionnaireHandler : MonoBehaviour
         }
 
         // initialize radio button choices: at first for each question all radio buttons are unselected (= -1)
-        _choiceOnPage = new QuestionnaireData(questionList.Length);
+        _choiceOnPage = new QuestionnaireData(questionList);
     }
 
     // if last page is reached and a choice has been made on every page, the confirm button will be enabled
