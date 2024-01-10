@@ -1,10 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 public class QuestionnaireData
@@ -137,33 +132,5 @@ public class QuestionnaireData
         StreamWriter streamWriter = new StreamWriter(Path.Combine(basePath, filename), false);
         streamWriter.Write(content);
         streamWriter.Close();
-        
-
-        /*List<IMultipartFormSection> l =  new List<IMultipartFormSection>();
-
-        l.Add(new MultipartFormDataSection("filename", filename));
-        l.Add(new MultipartFormDataSection("content", content));
-
-        yield return Upload(l);*/
     }
-
-   /* private IEnumerator Upload(List<IMultipartFormSection> data)
-    {
-        using (UnityWebRequest www = UnityWebRequest.Post(
-            "https://fearvr-foh.pockethost.io/api/collections/questinaire/records",
-            data
-        ))
-        {
-            yield return www.SendWebRequest();
-
-            if (www.result != UnityWebRequest.Result.Success)
-            {
-                Debug.LogError(www.error);
-            }
-            else
-            {
-                Debug.Log("Form upload complete!");
-            }
-        }
-    }*/
 }
