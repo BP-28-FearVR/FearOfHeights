@@ -14,6 +14,12 @@ public class AutoSceneChanger : MonoBehaviour
     [Tooltip("The time (in seconds) to wait for the AutoSceneTransition to start.")]
     [SerializeField] private SceneAsset targetScene;
 
+    [Tooltip("The questionnaire that shall be shown to the user before changing te scene.")]
+    [SerializeField] private GameObject questionnaire;
+
+    [Tooltip("The instruction UI that has to be deactivated when the questionnaire starts.")]
+    [SerializeField] private GameObject instructionsToBeDeactivated;
+
     // Setter for TargetScene Name
     public void SetTargetScene(SceneAsset sceneAsset)
     {
@@ -26,9 +32,21 @@ public class AutoSceneChanger : MonoBehaviour
         Invoke("OnTimerDone", time);
     }
 
-    // Is called once the timer finishes
+    // Is called once the timer finishes, starts the questionnaire if there is one
+    // scene change will then be handled by questionnaire, otherwise scene changes directly
     void OnTimerDone()
     {
-        sceneChanger.FadeToScene(targetScene);
+        if (questionnaire != null)
+        {
+            if (instructionsToBeDeactivated != null)
+            {
+                instructionsToBeDeactivated.SetActive(false);
+            }
+            questionnaire.SetActive(true);
+        } 
+        else
+        {
+            sceneChanger.FadeToScene(targetScene);
+        }
     }
 }
