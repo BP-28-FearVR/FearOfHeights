@@ -102,7 +102,8 @@ public class ExperimentController : MonoBehaviour
         return objectToCheck.layer == _collidingLayerInt;
     }
 
-    // End the Experiment and initiate the Switch to the next Scene
+    // if there is a questionnaire, make it visible for the user, the questionnaire then handles the scene transition
+    // otherwise end the experiment and initiate the switch to the next scene
     private void EndExperiment()
     {
         _isExperimentOngoing = false;
