@@ -25,16 +25,12 @@ public class ExperimentController : MonoBehaviour
 
     private string _collidingLayer = "ExperimentItem";
 
-    [Tooltip("hi")]
-    [SerializeField] private Object testObject;
-
     // Layer comparison is done in int, calculation result of the layer conversion to int is saved
     private int _collidingLayerInt = -1;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(testObject);
         _collidingLayerInt = LayerMask.NameToLayer(_collidingLayer);
         // Does a layer with that name exist (-1 means an non-existant layer)
         if (_collidingLayerInt == -1) throw new System.Exception("Unregistered Layer '" + _collidingLayer + "' used in ExperimentController");
