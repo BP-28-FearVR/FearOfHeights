@@ -18,11 +18,6 @@ public class StartIntroductionHandler : MonoBehaviour
     // text field of the UI element, which is used to show the currently selected page
     [SerializeField] private TextMeshProUGUI textDisplay;
 
-    // SceneChanger for Start Button
-    [SerializeField] private SceneChanger sceneChanger;
-    // Target Scene for Startbutton
-    [SerializeField] private SceneObject targetScene;
-
     // Event when a page changes
     [System.Serializable]
     public class PageChangeEvent : UnityEvent<int>
@@ -135,11 +130,4 @@ public class StartIntroductionHandler : MonoBehaviour
         //Notify Listners
         onPageChange.Invoke(_currentPage);
     }
-
-    // when Start button is pressed Transition to Next Scene
-    public void OnStartButtonPress()
-    {
-        sceneChanger.FadeToScene(targetScene);
-    }
-
 }
