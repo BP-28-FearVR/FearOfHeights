@@ -14,9 +14,6 @@ public class ExperimentController : MonoBehaviour
     [Tooltip("Empty GameObjects each containing 1 Item as child that is part of the Experiment, will be spawned and must be collected")]
     [SerializeField] private List<GameObject> experimentItems;
 
-    [Tooltip("The questionnaire that shall be shown to the user before changing the scene")]
-    [SerializeField] private GameObject questionnaire;
-
     // Enumerator to enumerate thorugh all the Experiment Items and spawn them
     private List<GameObject>.Enumerator _enumerator;
 
@@ -24,7 +21,7 @@ public class ExperimentController : MonoBehaviour
 
     private int _itemsCollected = 0;
 
-    private bool _isExperimentOngoing = true;
+    private bool _IsExperimentOngoing = true;
 
     private string _collidingLayer = "ExperimentItem";
 
@@ -93,7 +90,7 @@ public class ExperimentController : MonoBehaviour
     // Check if the experiment has ended (=: It is still running but the Success Condition has been met)
     private bool CheckIfExperimentEnded()
     {
-        return (_isExperimentOngoing && experimentItems.Count == _itemsCollected);
+        return (_IsExperimentOngoing && experimentItems.Count == _itemsCollected);
     }
 
     // Check if the specified GameObject is an ExperimentItem defined by it's layer being 'ExperimentItem'
@@ -102,18 +99,11 @@ public class ExperimentController : MonoBehaviour
         return objectToCheck.layer == _collidingLayerInt;
     }
 
-    // if there is a questionnaire, make it visible for the user, the questionnaire then handles the scene transition
-    // otherwise end the experiment and initiate the switch to the next scene
+    // End the Experiment and initiate the Switch to the next Scene
     private void EndExperiment()
     {
-        _isExperimentOngoing = false;
-        if (questionnaire != null)
-        {
-            questionnaire.SetActive(true);
-        } else
-        {
-            sceneChanger.FadeToScene(nextScene);
-        }
+        _IsExperimentOngoing = false;
+        sceneChanger.FadeToScene(nextScene);
     }
 
     // Activate the next Experiment Item and move the Enumerator onto the next Experiment Item
