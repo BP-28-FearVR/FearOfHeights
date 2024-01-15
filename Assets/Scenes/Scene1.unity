@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 38837606}
   - component: {fileID: 38837605}
   - component: {fileID: 38837604}
-  - component: {fileID: 38837603}
+  - component: {fileID: 38837607}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -142,27 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &38837603
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38837602}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &38837604
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -228,6 +207,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &38837607
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38837602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &132591039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,7 +296,7 @@ PrefabInstance:
     - target: {fileID: 9167744345705604205, guid: f1f27677c066ac940bcd47adcbd88a5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1441478318}
+      objectReference: {fileID: 0}
     - target: {fileID: 9167744345705604205, guid: f1f27677c066ac940bcd47adcbd88a5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -444,17 +445,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2490668438300942181, guid: f1f27677c066ac940bcd47adcbd88a5d, type: 3}
   m_PrefabInstance: {fileID: 132591039}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1441478318 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4592414552478374955, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
-  m_PrefabInstance: {fileID: 1940763253}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c796772cc95e05248bd45003f26ef4b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1940763253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -512,6 +502,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+--- !u!114 &1947925611 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4160419944751167674, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+  m_PrefabInstance: {fileID: 1940763253}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c796772cc95e05248bd45003f26ef4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &524405389751870701
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -654,6 +655,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3634474023492152222, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
+      propertyPath: time
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -3634474023492152222, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
+      propertyPath: sceneChanger
+      value: 
+      objectReference: {fileID: 1947925611}
+    - target: {fileID: -3634474023492152222, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
+      propertyPath: targetScene.m_SceneName
+      value: Scene2
+      objectReference: {fileID: 0}
     - target: {fileID: 2215303405486053068, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: m_Name
       value: AutoSceneChanger
@@ -669,7 +682,7 @@ PrefabInstance:
     - target: {fileID: 3092147717381518224, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: sceneChanger
       value: 
-      objectReference: {fileID: 1441478318}
+      objectReference: {fileID: 0}
     - target: {fileID: 3092147717381518224, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: questionnaire
       value: 
@@ -761,7 +774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 7}
+  m_AnchoredPosition: {x: 0, y: 3}
   m_SizeDelta: {x: 4, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807

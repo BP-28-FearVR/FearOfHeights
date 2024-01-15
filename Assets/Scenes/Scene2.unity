@@ -4673,8 +4673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac6399908e541c42a97a6a3fb8ae4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneChanger: {fileID: 1167191787}
-  nextScene: {fileID: 102900000, guid: 07cfc3bb140989f448b7f3644e183102, type: 3}
+  sceneChanger: {fileID: 1398466750}
+  nextScene:
+    m_SceneName: Scene3
   experimentItems:
   - {fileID: 1362972066}
   - {fileID: 451740235}
@@ -4683,7 +4684,6 @@ MonoBehaviour:
   - {fileID: 501173163}
   - {fileID: 340000786}
   - {fileID: 1388502304}
-  questionnaire: {fileID: 1968535501}
 --- !u!65 &491567162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19450,7 +19450,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 794e8b33aa9a0034982e52c0a3206a5c, type: 2}
+  - {fileID: 2100000, guid: 5de9b7ba7a360b7409c89428c77dd241, type: 2}
   - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -21420,7 +21420,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 794e8b33aa9a0034982e52c0a3206a5c, type: 2}
+  - {fileID: 2100000, guid: 5de9b7ba7a360b7409c89428c77dd241, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23576,7 +23576,7 @@ PrefabInstance:
     - target: {fileID: 9167744345705604205, guid: f1f27677c066ac940bcd47adcbd88a5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1167191787}
+      objectReference: {fileID: 0}
     - target: {fileID: 9167744345705604205, guid: f1f27677c066ac940bcd47adcbd88a5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -23925,17 +23925,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 375338504175889901, guid: 64bfe49453660eb4fa927d647360349b, type: 3}
   m_PrefabInstance: {fileID: 1154292431}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1167191787 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3208202186506190335, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
-  m_PrefabInstance: {fileID: 1134870667}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c796772cc95e05248bd45003f26ef4b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1176031188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25089,6 +25078,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37ea8533db106e4dbd42acd7d343dcf, type: 3}
+--- !u!114 &1398466750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3063184100380383598, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+  m_PrefabInstance: {fileID: 1134870667}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c796772cc95e05248bd45003f26ef4b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1406231320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4937648504130126, guid: 45758bfeb250861488e312efb7c10686, type: 3}
@@ -26693,7 +26693,7 @@ PrefabInstance:
     - target: {fileID: 3092147717381518224, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: sceneChanger
       value: 
-      objectReference: {fileID: 1167191787}
+      objectReference: {fileID: 0}
     - target: {fileID: 3092147717381518224, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: questionnaire
       value: 
@@ -28941,7 +28941,7 @@ Transform:
   m_GameObject: {fileID: 2112106230}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -3.248, z: 0}
+  m_LocalPosition: {x: -1, y: -3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37215,7 +37215,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a5f3265eb027f0e41af7b62f064343df, type: 2}
+  - {fileID: 2100000, guid: 43aed8071deba8e429e0ece69556ba79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
