@@ -18,7 +18,6 @@ public class StartIntroductionHandler : MonoBehaviour
     // text field of the UI element, which is used to show the currently selected page
     [SerializeField] private TextMeshProUGUI textDisplay;
 
-
     // Event when a page changes
     [System.Serializable]
     public class PageChangeEvent : UnityEvent<int>
@@ -131,5 +130,4 @@ public class StartIntroductionHandler : MonoBehaviour
         //Notify Listners
         onPageChange.Invoke(_currentPage);
     }
-
 }
