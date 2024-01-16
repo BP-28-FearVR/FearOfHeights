@@ -1481,7 +1481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75730515}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1636,7 +1636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 85761171}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1715,6 +1715,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8398541514769217881, guid: 059ba6b426b4fbb4aa54e05cc4ded782, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1773,7 +1777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 126885099}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2303,6 +2307,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 75730515}
     m_Modifications:
+    - target: {fileID: 5441788161665502176, guid: 7195e14c0548e9940aaac706e2f6f804, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7388978062993638021, guid: 7195e14c0548e9940aaac706e2f6f804, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -2416,6 +2424,10 @@ PrefabInstance:
     - target: {fileID: 66270069829614466, guid: bac3644e33c42634dbb7c8825fa3e2ec, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414930000084015972, guid: bac3644e33c42634dbb7c8825fa3e2ec, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4910,6 +4922,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7370822728322479512, guid: 79c7102a5c014e544902eddb2dee71e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6055,7 +6071,7 @@ GameObject:
   - component: {fileID: 575814933}
   - component: {fileID: 575814932}
   - component: {fileID: 575814935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21258,6 +21274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trigger Area Event
       objectReference: {fileID: 0}
+    - target: {fileID: 8898938008842846677, guid: 64bfe49453660eb4fa927d647360349b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21349,7 +21369,7 @@ GameObject:
   - component: {fileID: 861117477}
   - component: {fileID: 861117476}
   - component: {fileID: 861117475}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21596,7 +21616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 879191821}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21744,6 +21764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trigger Area Event for Scene Change
       objectReference: {fileID: 0}
+    - target: {fileID: 8898938008842846677, guid: 64bfe49453660eb4fa927d647360349b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21763,7 +21787,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 901311946}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22444,6 +22468,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3377719188748179935, guid: e3e8aaac9c2460c4a8292c2a2ddb8e53, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22929,7 +22957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1052880885}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22983,6 +23011,10 @@ PrefabInstance:
     - target: {fileID: 2291527461652008106, guid: bdf5b0391b69ff3408bd9f08516babb9, type: 3}
       propertyPath: m_Name
       value: Trigger Area Teleport For ExperimentItems
+      objectReference: {fileID: 0}
+    - target: {fileID: 2291527461652008106, guid: bdf5b0391b69ff3408bd9f08516babb9, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6949669689500995670, guid: bdf5b0391b69ff3408bd9f08516babb9, type: 3}
       propertyPath: m_LocalScale.x
@@ -23628,7 +23660,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1147741909}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23932,6 +23964,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrontTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 8898938008842846677, guid: 64bfe49453660eb4fa927d647360349b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24007,6 +24043,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1147741909}
     m_Modifications:
+    - target: {fileID: 1308096137051246086, guid: ae30cdf02cc506046a6c7efa25ce45b0, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8043557265066940775, guid: ae30cdf02cc506046a6c7efa25ce45b0, type: 3}
       propertyPath: m_Name
       value: strawberry Variant
@@ -24965,6 +25005,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 901311946}
     m_Modifications:
+    - target: {fileID: 7208897130042937918, guid: 66324402ac68fd04588b7c7f65616862, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8544162445192604376, guid: 66324402ac68fd04588b7c7f65616862, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -25134,6 +25178,10 @@ PrefabInstance:
     - target: {fileID: 2291527461652008106, guid: bdf5b0391b69ff3408bd9f08516babb9, type: 3}
       propertyPath: m_Name
       value: Trigger Area Teleport For Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2291527461652008106, guid: bdf5b0391b69ff3408bd9f08516babb9, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6949669689500995670, guid: bdf5b0391b69ff3408bd9f08516babb9, type: 3}
       propertyPath: m_LocalScale.x
@@ -26550,6 +26598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trigger Area Event for Door
       objectReference: {fileID: 0}
+    - target: {fileID: 8898938008842846677, guid: 64bfe49453660eb4fa927d647360349b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27260,7 +27312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1723763030}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Item3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28260,6 +28312,10 @@ PrefabInstance:
     - target: {fileID: 1114835567043760117, guid: d4b60ea813a5f754384cc46ff80f98a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511740284370085031, guid: d4b60ea813a5f754384cc46ff80f98a7, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38023,6 +38079,10 @@ PrefabInstance:
     - target: {fileID: 2291527461652008106, guid: bdf5b0391b69ff3408bd9f08516babb9, type: 3}
       propertyPath: m_Name
       value: Trigger Area Teleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 2291527461652008106, guid: bdf5b0391b69ff3408bd9f08516babb9, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2291527461652008106, guid: bdf5b0391b69ff3408bd9f08516babb9, type: 3}
       propertyPath: m_IsActive

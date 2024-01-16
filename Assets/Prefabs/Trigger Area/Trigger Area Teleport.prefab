@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 800214045459547386}
   - component: {fileID: 3609704899982035534}
   - component: {fileID: 2290210793738576132}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trigger Area Teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}

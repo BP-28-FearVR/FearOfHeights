@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 38837605}
   - component: {fileID: 38837604}
   - component: {fileID: 38837607}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6647837585043938625, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.906
       objectReference: {fileID: 0}
     - target: {fileID: 6647837585043938625, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: m_LocalPosition.z
