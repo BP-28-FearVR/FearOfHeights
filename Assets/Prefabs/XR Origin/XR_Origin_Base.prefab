@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6440362414208641491}
   - component: {fileID: 6171965357218694918}
   - component: {fileID: 7218663456151000333}
-  - component: {fileID: 4394474959296716447}
   - component: {fileID: 4709836513126893377}
   m_Layer: 0
   m_Name: FadeBlack
@@ -85,27 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &4394474959296716447
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207904093004665996}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7aa0d557472a7f149957be4062238a64, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!210 &4709836513126893377
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -1447,8 +1425,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6711334117873619888}
   - component: {fileID: 695832060767490654}
+  - component: {fileID: 6922041768272802831}
   - component: {fileID: 6315370210511702594}
-  m_Layer: 0
+  - component: {fileID: 1783624553250869882}
+  m_Layer: 10
   m_Name: Clipping Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1492,6 +1472,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!135 &6922041768272802831
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507349578666494713}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6315370210511702594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1506,6 +1507,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 695832060767490654}
   forbiddenLayerName: UnclippableObject
+--- !u!54 &1783624553250869882
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507349578666494713}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2161737478710880071
 GameObject:
   m_ObjectHideFlags: 0
