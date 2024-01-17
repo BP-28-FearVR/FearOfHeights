@@ -22213,9 +22213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4305498785789619067, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_text
-      value: "Please walk onto the plank and pick up the fruit\n\nIf your done with
-        one fruit then pick up another one \n\nIf you manage to do that than your
-        finished your Task\n\nGood Luck and have Fun!\n\n\n\r\n\r\n\r\n\r\n\r\n\r\n"
+      value: "Explore your surroundings.\n\nPick up the fruits and put them in the basket.\n\n\n\r\n\r\n\r\n\r\n\r\n\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4781678653513335333, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_LocalPosition.z
