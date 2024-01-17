@@ -12,8 +12,30 @@ public class OpenDoor : MonoBehaviour
     [Tooltip("Final Door Rotation")]
     [SerializeField] private float openRotation = 84.0f;
 
+    [Tooltip("The time in seconds after which the door can be opened")]
+    [SerializeField] private float timeUntilDoorOpens;
+
+    [Tooltip("The trigger area for opening this door")]
+    [SerializeField] private GameObject doorTrigger;
+
+    private float _timer = 0.0f;
+    private bool _hasUiBeenClosed = false;
+    private bool _isDoorTriggerActive = false;
     private bool _isDoorMoving = false;
     private bool _isDoorOpened = false;
+
+    private void Update()
+    {
+        if (_hasUiBeenClosed && !_isDoorTriggerActive)
+        {
+            _timer += Time.deltaTime;
+            if (_timer >= timeUntilDoorOpens)
+            {
+                doorTrigger.SetActive(true);
+                _isDoorTriggerActive = true;
+            }
+        }
+    }
 
     // Opens door if closed and closes door if opened
     public void Interact()
@@ -26,6 +48,11 @@ public class OpenDoor : MonoBehaviour
         {
             Close();
         }
+    }
+
+    public void setUiClosedTrue()
+    {
+        _hasUiBeenClosed = true;
     }
 
     // Opens the door if it's not moving or open

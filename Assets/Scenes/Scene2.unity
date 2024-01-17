@@ -3400,6 +3400,8 @@ MonoBehaviour:
   door: {fileID: 421535107}
   openSpeed: 2
   openRotation: 84
+  timeUntilDoorOpens: 0
+  doorTrigger: {fileID: 0}
 --- !u!64 &421535109
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3667,6 +3669,8 @@ MonoBehaviour:
   door: {fileID: 432627268}
   openSpeed: 2
   openRotation: 84
+  timeUntilDoorOpens: 20
+  doorTrigger: {fileID: 0}
 --- !u!64 &432627270
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5020,6 +5024,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1882066680}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4820851769216444526, guid: 89dd74c61103b7644ab2dd9d26606ea0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2094849444}
     - targetCorrespondingSourceObject: {fileID: 1705576873524179968, guid: 89dd74c61103b7644ab2dd9d26606ea0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 534673666}
@@ -5306,6 +5313,8 @@ MonoBehaviour:
   door: {fileID: 534673664}
   openSpeed: 2
   openRotation: 84
+  timeUntilDoorOpens: 20
+  doorTrigger: {fileID: 970890098}
 --- !u!1001 &555834095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19650,6 +19659,8 @@ MonoBehaviour:
   door: {fileID: 587181208}
   openSpeed: 2
   openRotation: 84
+  timeUntilDoorOpens: 0
+  doorTrigger: {fileID: 0}
 --- !u!64 &587181211
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20841,6 +20852,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Single Text Window
       objectReference: {fileID: 0}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 534673674}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: setUiClosedTrue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: OpenDoor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2405115814579147795, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.80329114
@@ -20859,7 +20902,7 @@ PrefabInstance:
 
 
         After
-        a few minutes you can open the door and enter the next room.
+        a few minutes the door will be highlighted and you will be able to open it.
 
 
 '
@@ -21487,6 +21530,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ddc8a1dd4086a449b9e24bc73037642, type: 3}
+--- !u!1 &844747006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4820851769216444526, guid: 89dd74c61103b7644ab2dd9d26606ea0, type: 3}
+  m_PrefabInstance: {fileID: 534673663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &861117473
 GameObject:
   m_ObjectHideFlags: 0
@@ -22638,6 +22686,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1800516560805466587, guid: e3e8aaac9c2460c4a8292c2a2ddb8e53, type: 3}
   m_PrefabInstance: {fileID: 963536011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &970890098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8898938008842846677, guid: 64bfe49453660eb4fa927d647360349b, type: 3}
+  m_PrefabInstance: {fileID: 1154292431}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &992059988
 PrefabInstance:
@@ -24105,6 +24158,10 @@ PrefabInstance:
     - target: {fileID: 8898938008842846677, guid: 64bfe49453660eb4fa927d647360349b, type: 3}
       propertyPath: m_Name
       value: FrontTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898938008842846677, guid: 64bfe49453660eb4fa927d647360349b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29020,6 +29077,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4820851769216218190, guid: 89dd74c61103b7644ab2dd9d26606ea0, type: 3}
   m_PrefabInstance: {fileID: 534673663}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2094849444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844747006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &2094896976
 PrefabInstance:
   m_ObjectHideFlags: 0
