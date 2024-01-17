@@ -9,20 +9,14 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] private Animator animator;
 
     // Name of the scene to Load.
-    private string _sceneToLoad;
-
-    // Starts the fade-out/in animation 
-    private void FadeToScene(string sceneName)
-    {
-        _sceneToLoad = sceneName;
-        animator.SetTrigger("FadeOut");
-    }
+    private SceneObject _sceneToLoad;
 
     // The function to be called in order to initiate a Scene Change (The parameter's datatype makes sure no invalid input except null is passed)
-    public void FadeToScene(SceneAsset sceneAsset)
+    public void FadeToScene(SceneObject sceneObject)
     {
-        if (sceneAsset == null) throw new System.Exception("No SceneAsset was passed to SceneChanger");
-        FadeToScene(sceneAsset.name);
+        if (sceneObject == null) throw new System.Exception("No SceneAsset was passed to SceneChanger");
+        _sceneToLoad = sceneObject;
+        animator.SetTrigger("FadeOut");
     }
 
     // Handles the actual scene Transion

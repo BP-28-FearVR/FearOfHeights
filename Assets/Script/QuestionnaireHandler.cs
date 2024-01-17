@@ -21,7 +21,7 @@ public class QuestionnaireHandler : MonoBehaviour
     [SerializeField] private Toggle[] options;
 
     // _choices[i] saves the index of which radio button is selected on page i, if none is selected _choices[i] contains -1
-    private int[] _choiceOnPage;
+    private QuestionnaireData _choiceOnPage = null;
     private bool _isEveryQuestionAnswered = false;
 
     // check if there has been entered a question via the input field in the editor
@@ -51,11 +51,7 @@ public class QuestionnaireHandler : MonoBehaviour
         }
 
         // initialize radio button choices: at first for each question all radio buttons are unselected (= -1)
-        _choiceOnPage = new int[questionList.Length];
-        for (int i = 0; i < questionList.Length; i++)
-        {
-            _choiceOnPage[i] = -1;
-        }
+        _choiceOnPage = new QuestionnaireData(questionList);
     }
 
     // if last page is reached and a choice has been made on every page, the confirm button will be enabled
@@ -151,6 +147,8 @@ public class QuestionnaireHandler : MonoBehaviour
                 break;
             }
         }
+
+        _choiceOnPage.SaveToFile();
     }
 
     // turns on the radio button previously selected on the next page (has to be called right after switching the page)

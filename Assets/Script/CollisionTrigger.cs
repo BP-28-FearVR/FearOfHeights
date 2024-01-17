@@ -28,7 +28,7 @@ public abstract class CollisionTrigger : MonoBehaviour
     // Checks if the tag or layer (depending on the choosen detection type) exists
     protected void CheckInput()
     {
-        if (detectUsing == DetectUsing.Tag)
+        /*if (detectUsing == DetectUsing.Tag)
         {
             // Does the Unity Editor have a tag with that name registered?
             if (!UnityEditorInternal.InternalEditorUtility.tags.Contains<string>(collidingTag))
@@ -44,6 +44,6 @@ public abstract class CollisionTrigger : MonoBehaviour
             {
                 throw new System.Exception("Unregistered Layer used in Trigger Area GameObject");
             }
-        }
+        }*/
     }
 }

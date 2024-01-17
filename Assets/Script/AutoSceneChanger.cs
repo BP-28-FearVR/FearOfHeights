@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 // Used to call the SceneChanger after a specified time in order to switch to a specified Scene
@@ -11,8 +10,8 @@ public class AutoSceneChanger : MonoBehaviour
     [SerializeField] private float time = 20.0f;
 
     // Stores the TargetScene Name
-    [Tooltip("The time (in seconds) to wait for the AutoSceneTransition to start.")]
-    [SerializeField] private SceneAsset targetScene;
+    [Tooltip("The target scene to switch to.")]
+    [SerializeField] private SceneObject targetScene;
 
     [Tooltip("The questionnaire that shall be shown to the user before changing te scene.")]
     [SerializeField] private GameObject questionnaire;
@@ -21,9 +20,9 @@ public class AutoSceneChanger : MonoBehaviour
     [SerializeField] private GameObject instructionsToBeDeactivated;
 
     // Setter for TargetScene Name
-    public void SetTargetScene(SceneAsset sceneAsset)
+    public void SetTargetScene(SceneObject sceneObject)
     {
-        targetScene = sceneAsset;
+        targetScene = sceneObject;
     }
 
     // Start is called before the first frame update
