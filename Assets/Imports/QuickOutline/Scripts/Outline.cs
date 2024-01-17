@@ -97,7 +97,10 @@ public class Outline : MonoBehaviour {
 
     // Apply material properties immediately
     needsUpdate = true;
-  }
+
+    // disable the script, so that outline can later be activated at a given time
+    this.enabled = false;
+    }
 
   void OnEnable() {
     foreach (var renderer in renderers) {
@@ -136,6 +139,16 @@ public class Outline : MonoBehaviour {
       UpdateMaterialProperties();
     }
   }
+
+    public void TurnOutlineOn()
+    {
+        this.enabled = true;
+    }
+
+    public void TurnOutlineOff()
+    {
+        this.enabled = false;
+    }
 
   void OnDisable() {
     foreach (var renderer in renderers) {
@@ -272,6 +285,7 @@ public class Outline : MonoBehaviour {
   void UpdateMaterialProperties() {
 
     // Apply properties according to mode
+
     outlineFillMaterial.SetColor("_OutlineColor", outlineColor);
 
     switch (outlineMode) {

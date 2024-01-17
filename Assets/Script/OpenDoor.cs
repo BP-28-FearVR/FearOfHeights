@@ -24,6 +24,8 @@ public class OpenDoor : MonoBehaviour
     private bool _isDoorMoving = false;
     private bool _isDoorOpened = false;
 
+    [SerializeField] private Outline outline;
+
     public void Update()
     {
         if (_hasUiBeenClosed && !_isDoorTriggerActive)
@@ -33,6 +35,7 @@ public class OpenDoor : MonoBehaviour
             {
                 doorTrigger.SetActive(true);
                 _isDoorTriggerActive = true;
+                outline.TurnOutlineOn();
             }
         }
     }
