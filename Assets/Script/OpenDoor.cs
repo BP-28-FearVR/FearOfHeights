@@ -12,8 +12,79 @@ public class OpenDoor : MonoBehaviour
     [Tooltip("Final Door Rotation")]
     [SerializeField] private float openRotation = 84.0f;
 
+    [Tooltip("The time in seconds after which the door can be opened")]
+    [SerializeField] private float timeUntilDoorOpens;
+
+    [Tooltip("The time in seconds that Outline stays on/off. (<= 0 to disable blinking)")]
+    [SerializeField] private float blinkToggleInterval = 2;
+
+    [Tooltip("The trigger area for opening this door")]
+    [SerializeField] private GameObject doorTrigger;
+
+    [Tooltip("The outline object for the outline animation.")]
+    [SerializeField] private Outline outline;
+
+    private bool _isOutlineOn = false;
     private bool _isDoorMoving = false;
     private bool _isDoorOpened = false;
+
+
+    //Toggles the Outline on and off.
+    private void ToggleOutline()
+    {
+        if (outline != null)
+        {
+            if (_isOutlineOn)
+            {
+                outline.TurnOutlineOff();
+            }
+            else
+            {
+                outline.TurnOutlineOn();
+            }
+        }
+
+        _isOutlineOn = !_isOutlineOn;
+    }
+
+    // StopBlinkingAndDeactivateOutline
+    public void StopBlinkingAndDeactivateOutline()
+    {
+        CancelInvoke("ToggleOutline");
+
+        if (outline != null)
+        {   
+            outline.TurnOutlineOff();
+        }
+
+        _isOutlineOn = false;
+    }
+
+    //Is invoked when the timer started by StartTriggerTimer is finished
+    //Activates the Door Trigger and the Blinking Outline
+    public void OnTimerDone()
+    {
+        if (doorTrigger != null)
+        {
+            doorTrigger.SetActive(true);
+        }
+
+        if (outline == null) return;
+
+        if (blinkToggleInterval > 0) {
+            InvokeRepeating("ToggleOutline", 0, blinkToggleInterval);
+        } else
+        {
+            outline.TurnOutlineOn();
+            _isOutlineOn = true;
+        }
+    }
+
+    //Starts the timer that calls OnTimerDone
+    public void StartTriggerTimer()
+    {
+        Invoke("OnTimerDone", timeUntilDoorOpens);
+    }
 
     // Opens door if closed and closes door if opened
     public void Interact()
@@ -35,6 +106,8 @@ public class OpenDoor : MonoBehaviour
         {
             StartCoroutine(RotateDoor(openRotation));
             _isDoorOpened = true;
+
+            StopBlinkingAndDeactivateOutline();
         }
     }
 
