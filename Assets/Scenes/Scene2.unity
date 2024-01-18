@@ -3418,6 +3418,7 @@ MonoBehaviour:
   openSpeed: 2
   openRotation: 84
   timeUntilDoorOpens: 0
+  blinkToggleInterval: 0
   doorTrigger: {fileID: 0}
   outline: {fileID: 0}
 --- !u!64 &421535109
@@ -3688,6 +3689,7 @@ MonoBehaviour:
   openSpeed: 2
   openRotation: 84
   timeUntilDoorOpens: 0
+  blinkToggleInterval: 0
   doorTrigger: {fileID: 0}
   outline: {fileID: 0}
 --- !u!64 &432627270
@@ -5338,6 +5340,7 @@ MonoBehaviour:
   openSpeed: 2
   openRotation: 84
   timeUntilDoorOpens: 10
+  blinkToggleInterval: 1
   doorTrigger: {fileID: 1802340329}
   outline: {fileID: 2094849444}
 --- !u!1001 &555834095
@@ -19685,6 +19688,7 @@ MonoBehaviour:
   openSpeed: 2
   openRotation: 84
   timeUntilDoorOpens: 0
+  blinkToggleInterval: 0
   doorTrigger: {fileID: 0}
   outline: {fileID: 0}
 --- !u!64 &587181211
@@ -20884,7 +20888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -20896,7 +20900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetIsUiClosed
+      value: StartTriggerTimer
       objectReference: {fileID: 0}
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
