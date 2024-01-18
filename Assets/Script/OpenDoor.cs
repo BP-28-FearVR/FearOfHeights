@@ -21,11 +21,12 @@ public class OpenDoor : MonoBehaviour
     [Tooltip("The trigger area for opening this door")]
     [SerializeField] private GameObject doorTrigger;
 
-    private bool _outlineIsOn = false;
+    [Tooltip("The outline object for the outline animation.")]
+    [SerializeField] private Outline outline;
+
+    private bool _isOutlineOn = false;
     private bool _isDoorMoving = false;
     private bool _isDoorOpened = false;
-
-    [SerializeField] private Outline outline;
 
 
     //Toggles the Outline on and off.
@@ -33,7 +34,7 @@ public class OpenDoor : MonoBehaviour
     {
         if (outline != null)
         {
-            if (_outlineIsOn)
+            if (_isOutlineOn)
             {
                 outline.TurnOutlineOff();
             }
@@ -43,7 +44,7 @@ public class OpenDoor : MonoBehaviour
             }
         }
 
-        _outlineIsOn = !_outlineIsOn;
+        _isOutlineOn = !_isOutlineOn;
     }
 
     // StopBlinkingAndDeactivateOutline
@@ -56,14 +57,17 @@ public class OpenDoor : MonoBehaviour
             outline.TurnOutlineOff();
         }
 
-        _outlineIsOn = false;
+        _isOutlineOn = false;
     }
 
     //Is invoked when the timer started by StartTriggerTimer is finished
     //Activates the Door Trigger and the Blinking Outline
     public void OnTimerDone()
     {
-        doorTrigger.SetActive(true);
+        if (doorTrigger != null)
+        {
+            doorTrigger.SetActive(true);
+        }
 
         if (outline == null) return;
 
@@ -72,7 +76,7 @@ public class OpenDoor : MonoBehaviour
         } else
         {
             outline.TurnOutlineOn();
-            _outlineIsOn = true;
+            _isOutlineOn = true;
         }
     }
 
