@@ -5172,7 +5172,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 285976895}
         m_TargetAssemblyTypeName: TorchHandler, Assembly-CSharp
-        m_MethodName: OnPlayerToClose
+        m_MethodName: OnPlayerTooClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -9,7 +9,7 @@ public class TorchHandler : MonoBehaviour
     [SerializeField] private Vector3 pushVector = new Vector3(7,0,0);
 
     //Handles throwing of the torch when player is too close.
-    public void OnPlayerToClose()
+    public void OnPlayerTooClose()
     {
         if (torchBody != null)
         {
