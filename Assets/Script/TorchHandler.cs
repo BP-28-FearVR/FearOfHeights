@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class TorchHandler : MonoBehaviour
 {
-    [Tooltip("The Torch Ridgdbody that should fall down.")]
-    [SerializeField] private Rigidbody torch;
+    [Tooltip("The Torch Rigidbody that should fall down.")]
+    [SerializeField] private Rigidbody torchBody;
 
-    //Handles throwing of the torch when player is to close.
+    [Tooltip("The Torque-velocity vector, that is applied to the torch. (Max total angular velocity is 7)")]
+    [SerializeField] private Vector3 pushVector = new Vector3(7,0,0);
+
+    //Handles throwing of the torch when player is too close.
     public void OnPlayerToClose()
     {
-        if (torch != null)
+        if (torchBody != null)
         {
-            torch.AddRelativeTorque(5, 0, 0, ForceMode.VelocityChange);
+            torchBody.AddRelativeTorque(pushVector, ForceMode.VelocityChange);
         }
         
 
