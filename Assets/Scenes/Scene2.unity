@@ -5131,7 +5131,7 @@ GameObject:
   - component: {fileID: 285976895}
   - component: {fileID: 285976894}
   m_Layer: 9
-  m_Name: ToruchThrowCollider
+  m_Name: TorchThrowCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
