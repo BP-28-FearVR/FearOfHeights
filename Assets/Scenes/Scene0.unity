@@ -736,6 +736,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5568545084359665148, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: recenterPointTransform
+      value: 
+      objectReference: {fileID: 1310278294}
     - target: {fileID: 6647837585043938625, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1019,6 +1023,37 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1310278293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1310278294}
+  m_Layer: 0
+  m_Name: RecenterPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1310278294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310278293}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1378362589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2321,6 +2356,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 299639869}
   - {fileID: 1249617921}
+  - {fileID: 1310278294}
   - {fileID: 988287706}
   - {fileID: 1378362589}
   - {fileID: 149026458}
