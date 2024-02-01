@@ -2306,6 +2306,7 @@ GameObject:
   - component: {fileID: 5639304850091777188}
   - component: {fileID: 2166925173888196101}
   - component: {fileID: 3752973851949079116}
+  - component: {fileID: 6807516361311028264}
   m_Layer: 2
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -2428,6 +2429,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dddbc5696a98334089f477769e18bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6807516361311028264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601533994270973645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c791f14f63caee34cbe9420e9bc3b135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Action Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: dacf2307-74a7-4435-a133-ec50a1209a5d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -7229917235241773598, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  recenterPointTransform: {fileID: 0}
 --- !u!1 &3856778413706935048
 GameObject:
   m_ObjectHideFlags: 0
