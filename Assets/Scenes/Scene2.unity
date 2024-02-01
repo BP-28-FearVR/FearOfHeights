@@ -8980,7 +8980,7 @@ MonoBehaviour:
   door: {fileID: 534673664}
   openSpeed: 2
   openRotation: 84
-  timeUntilDoorOpens: 10
+  timeUntilDoorOpens: 120
   blinkToggleInterval: 1
   doorTrigger: {fileID: 1802340329}
   outline: {fileID: 2094849444}
@@ -26993,7 +26993,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3634474023492152222, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: time
-      value: 180
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: -3634474023492152222, guid: 26a9ee7b490254c43a334728b71cb274, type: 3}
       propertyPath: questionnaire

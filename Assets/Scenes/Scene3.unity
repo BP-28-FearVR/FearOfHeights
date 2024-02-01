@@ -724,6 +724,10 @@ PrefabInstance:
       propertyPath: questionnaire
       value: 
       objectReference: {fileID: 755048737}
+    - target: {fileID: 8754550687254103289, guid: f67cb3bdf0a85ce44afc3dfcf5ecc555, type: 3}
+      propertyPath: secondsToWait
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
