@@ -100,6 +100,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6807516361311028264, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: actionButton.m_Reference
+      value: 
+      objectReference: {fileID: -7229917235241773598, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 6807516361311028264, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: actionButton.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7162576505692392407, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
       propertyPath: m_MoveSpeed
       value: 0

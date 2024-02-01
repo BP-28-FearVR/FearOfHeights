@@ -113,6 +113,14 @@ public class ExperimentController : MonoBehaviour
         {
             sceneChanger.FadeToScene(nextScene);
         }
+
+        //Disable all experiment Items
+        foreach (GameObject currentObject in experimentItems) {
+            currentObject.SetActive(false); 
+        }   
+
+        //Disable self
+        this.enabled = false;
     }
 
     // Activate the next Experiment Item and move the Enumerator onto the next Experiment Item
