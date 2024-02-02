@@ -19397,19 +19397,68 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3601533994270973645, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1134870672}
   m_SourcePrefab: {fileID: 100100000, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
 --- !u!114 &1134870668 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6807516361311028264, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
   m_PrefabInstance: {fileID: 1134870667}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1134870671}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c791f14f63caee34cbe9420e9bc3b135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1134870669 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2898250589281047763, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+  m_PrefabInstance: {fileID: 1134870667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1134870670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1737221740672166903, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+  m_PrefabInstance: {fileID: 1134870667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1134870671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3601533994270973645, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+  m_PrefabInstance: {fileID: 1134870667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1134870672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134870671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb93d0e9c86be5a4eac88f3a079c1cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trans1: {fileID: 1134870670}
+  trans2: {fileID: 1134870669}
+  textDisplay: {fileID: 0}
+  cam: {fileID: 1134870669}
+  recenterPoint: {fileID: 896756136}
+  xrorigin: {fileID: 1134870670}
+  instance: 1
+  actionButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Action Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 0589ef38-c097-440f-8a04-5aa97b9810cb
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -274053370174316677, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1001 &1136876337
 PrefabInstance:
   m_ObjectHideFlags: 0
