@@ -2307,6 +2307,7 @@ GameObject:
   - component: {fileID: 2166925173888196101}
   - component: {fileID: 3752973851949079116}
   - component: {fileID: 6807516361311028264}
+  - component: {fileID: 5843580287357623575}
   m_Layer: 2
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -2453,7 +2454,38 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -7229917235241773598, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  recenterPointTransform: {fileID: 0}
+  recenterPoint: {fileID: 0}
+--- !u!114 &5843580287357623575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601533994270973645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb93d0e9c86be5a4eac88f3a079c1cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trans1: {fileID: 0}
+  trans2: {fileID: 0}
+  textDisplay: {fileID: 0}
+  cam: {fileID: 0}
+  recenterPoint: {fileID: 0}
+  xrorigin: {fileID: 0}
+  instance: 0
+  actionButton:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Action Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 8208d328-489b-408a-b465-6a3be4c6dd61
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &3856778413706935048
 GameObject:
   m_ObjectHideFlags: 0
@@ -4804,11 +4836,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69efd5124b29aa469456b9a0e9bf30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.15
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
   invisibleFloor: {fileID: 0}
+  radius: 0.15
+  maxDistance: 3
+  sphereCastDirection: {x: 0, y: -1, z: 0}
 --- !u!1 &5536759829629227498
 GameObject:
   m_ObjectHideFlags: 0

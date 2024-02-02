@@ -375,6 +375,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4766720592574872771, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: xrOrigin
+      value: 
+      objectReference: {fileID: 1016234110}
+    - target: {fileID: 4766720592574872771, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1016234111}
+    - target: {fileID: 4766720592574872771, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: belongsToScene
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766720592574872771, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: actionButton.m_Reference
+      value: 
+      objectReference: {fileID: -274053370174316677, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 4766720592574872771, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: actionButton.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5568545084359665148, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: recenterPoint
       value: 
@@ -432,6 +452,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+--- !u!4 &1016234110 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 803192866926119459, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+  m_PrefabInstance: {fileID: 1016234109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1016234111 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4253366028285916423, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+  m_PrefabInstance: {fileID: 1016234109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1682335904
 PrefabInstance:
   m_ObjectHideFlags: 0
