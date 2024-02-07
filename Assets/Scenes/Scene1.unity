@@ -472,8 +472,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xrNode: 3
-  distanceFromUser: 1
-  distanceInFront: 1
+  distanceFromUser: 2.5
+  heightFromGround: 1.5
 --- !u!1001 &904658475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -936,8 +936,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xrNode: 3
-  distanceFromUser: 2
-  distanceInFront: 3
+  distanceFromUser: 3.5
+  heightFromGround: 1.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
