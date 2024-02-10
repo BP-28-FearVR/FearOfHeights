@@ -10,14 +10,16 @@ public class PositioningtheUI : MonoBehaviour
     private float distanceFromUser = 3.5f; // Distance of the UI from the user
 
     [SerializeField]
-    private float heightFromGround = 2f; // Height above the ground where the UI should appear
+    private float heightFromGround = 2.0f; // Height above the ground where the UI should appear
 
     private void Start()
     {
         if (XRSettings.isDeviceActive)
         {
-            if (TrySetUIPositionAndRotation())
-            Debug.LogWarning("Failed to set UI position and rotation.");
+            if (!TrySetUIPositionAndRotation())
+            {
+                Debug.LogWarning("Failed to set UI position and rotation.");
+            }
         }
     }
 
