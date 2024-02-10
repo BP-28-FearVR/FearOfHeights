@@ -331,7 +331,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2490668438300942181, guid: f1f27677c066ac940bcd47adcbd88a5d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 645134947}
   m_SourcePrefab: {fileID: 100100000, guid: f1f27677c066ac940bcd47adcbd88a5d, type: 3}
 --- !u!1 &299639867
 GameObject:
@@ -456,6 +459,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2490668438300942181, guid: f1f27677c066ac940bcd47adcbd88a5d, type: 3}
   m_PrefabInstance: {fileID: 132591039}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &645134947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645134946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a74edbff70ccd44cb13130b4b37c578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraOffset: {fileID: 2011531794}
+  xrNode: 3
+  distanceFromUser: 2.5
+  heightFromGround: 1.75
 --- !u!1001 &904658475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -733,6 +752,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c796772cc95e05248bd45003f26ef4b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2011531794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7437001441643962206, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+  m_PrefabInstance: {fileID: 1940763253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &524405389751870701
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -878,6 +902,7 @@ GameObject:
   - component: {fileID: 8549252768918717875}
   - component: {fileID: 524405389751870701}
   - component: {fileID: 6357441566475681012}
+  - component: {fileID: 8549252768918717876}
   m_Layer: 0
   m_Name: InstructionUI
   m_TagString: Untagged
@@ -904,6 +929,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 3}
   m_SizeDelta: {x: 4, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8549252768918717876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236492127486751795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a74edbff70ccd44cb13130b4b37c578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraOffset: {fileID: 2011531794}
+  xrNode: 3
+  distanceFromUser: 3.5
+  heightFromGround: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
