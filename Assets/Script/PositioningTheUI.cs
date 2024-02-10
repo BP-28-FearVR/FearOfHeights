@@ -4,13 +4,13 @@ using UnityEngine.XR;
 public class PositioningtheUI : MonoBehaviour
 {
     [SerializeField]
-    private XRNode xrNode = XRNode.Head; // XRNode for user position and rotation
+    private XRNode _xrNode = XRNode.Head; // XRNode for user position and rotation
 
     [SerializeField]
-    private float distanceFromUser = 3.5f; // Distance of the UI from the user
+    private float _distanceFromUser = 3.5f; // Distance of the UI from the user
 
     [SerializeField]
-    private float heightFromGround = 2.0f; // Height above the ground where the UI should appear
+    private float _heightFromGround = 2.0f; // Height above the ground where the UI should appear
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class PositioningtheUI : MonoBehaviour
     private bool TrySetUIPositionAndRotation()
     {
         // Retrieve Headset Handle
-        InputDevice device = InputDevices.GetDeviceAtXRNode(xrNode);
+        InputDevice device = InputDevices.GetDeviceAtXRNode(_xrNode);
         if (device == null)
         {
             return false;
@@ -47,8 +47,8 @@ public class PositioningtheUI : MonoBehaviour
         }
 
         // Calculate UI Position based on XR Rotation and Distance from User and Ground
-        Vector3 targetPosition = headsetPosition + (headsetRotation * Vector3.forward * distanceFromUser);
-        targetPosition.y = heightFromGround;
+        Vector3 targetPosition = headsetPosition + (headsetRotation * Vector3.forward * _distanceFromUser);
+        targetPosition.y = _heightFromGround;
 
         // Set the UI Position relative to the XR Position and Rotation
         transform.position = targetPosition;
