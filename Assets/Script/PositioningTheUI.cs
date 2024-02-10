@@ -54,8 +54,7 @@ public class PositioningtheUI : MonoBehaviour
         transform.position = targetPosition;
 
         // Set the UI rotation to the XR Node rotation (horizontal only)
-        Quaternion horizontalRotation = Quaternion.Euler(0f, headsetRotation.eulerAngles.y, 0f);
-        transform.rotation = horizontalRotation;
+        transform.rotation = Quaternion.Euler(0f, headsetRotation.eulerAngles.y, 0f);
 
         return true;
     }
