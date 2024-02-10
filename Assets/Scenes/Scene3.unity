@@ -374,6 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a74edbff70ccd44cb13130b4b37c578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraOffset: {fileID: 0}
   xrNode: 3
   distanceFromUser: 2.5
   heightFromGround: 1.75
@@ -394,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a74edbff70ccd44cb13130b4b37c578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraOffset: {fileID: 1016234110}
   xrNode: 3
   distanceFromUser: 2.5
   heightFromGround: 1.75
@@ -462,6 +464,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+--- !u!1 &1016234110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7437001441643962206, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+  m_PrefabInstance: {fileID: 1016234109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1682335904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -986,6 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a74edbff70ccd44cb13130b4b37c578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraOffset: {fileID: 1016234110}
   xrNode: 3
   distanceFromUser: 3.5
   heightFromGround: 2
