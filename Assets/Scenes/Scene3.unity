@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a74edbff70ccd44cb13130b4b37c578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraOffset: {fileID: 0}
+  cameraOffset: {fileID: 1016234110}
   xrNode: 3
   distanceFromUser: 2.5
   heightFromGround: 1.75
