@@ -23,21 +23,32 @@ public class PositioningtheUI : MonoBehaviour
 
     private bool TrySetUIPositionAndRotation()
     {
+        // Retrieve Headset Handle
         InputDevice device = InputDevices.GetDeviceAtXRNode(xrNode);
         if (device == null)
+        {
             return false;
+        }
 
+        // Retrieve Headset Position
         Vector3 headsetPosition;
         if (!device.TryGetFeatureValue(CommonUsages.devicePosition, out headsetPosition))
+        {
             return false;
+        }
 
+        // Retrieve Headset Rotation
         Quaternion headsetRotation;
         if (!device.TryGetFeatureValue(CommonUsages.deviceRotation, out headsetRotation))
+        {
             return false;
+        }
 
+        // Calculate UI Position based on XR Rotation and Distance from User and Ground
         Vector3 targetPosition = headsetPosition + (headsetRotation * Vector3.forward * distanceFromUser);
         targetPosition.y = heightFromGround;
 
+        // Set the UI Position relative to the XR Position and Rotation
         transform.position = targetPosition;
 
         // Set the UI rotation to the XR Node rotation (horizontal only)
