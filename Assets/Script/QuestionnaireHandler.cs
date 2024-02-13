@@ -54,11 +54,10 @@ public class QuestionnaireHandler : MonoBehaviour
         _choiceOnPage = new QuestionnaireData(questionList);
     }
 
-    // if last page is reached and a choice has been made on every page, the confirm button will be enabled
+    // if a choice has been made on every page, the confirm button will be enabled
     public void EnableConfirm()
     {
-        if (_currentPage == questionList.Length - 1)
-        {
+       
             SaveChoices();
             if (_isEveryQuestionAnswered)
             {
@@ -68,7 +67,7 @@ public class QuestionnaireHandler : MonoBehaviour
             {
                 confirmButton.interactable = false;
             }
-        }
+        
     }
 
     // if the "next" button is clicked, the UI will show the next question in line
@@ -116,11 +115,10 @@ public class QuestionnaireHandler : MonoBehaviour
             previousButton.interactable = false;
         }
 
-        // disable "confirm" button if UI currently does not show the last page
+        // enables "next" button if UI currently does not show the last page
         if (_currentPage < questionList.Length - 1)
         {
             nextButton.interactable = true;
-            confirmButton.interactable = false;
         }
     }
 
