@@ -257,7 +257,7 @@ MonoBehaviour:
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 1
   m_AllowHoveredActivate: 0
-  m_TargetPriorityMode: 0
+  m_TargetPriorityMode: 1
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
   m_PlayAudioClipOnSelectExited: 0
@@ -2453,7 +2453,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -7229917235241773598, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  recenterPointTransform: {fileID: 0}
+  recenterPoint: {fileID: 0}
 --- !u!1 &3856778413706935048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,7 +2563,7 @@ MonoBehaviour:
   m_SelectActionTrigger: 1
   m_HideControllerOnSelect: 1
   m_AllowHoveredActivate: 0
-  m_TargetPriorityMode: 0
+  m_TargetPriorityMode: 1
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
   m_PlayAudioClipOnSelectExited: 0
@@ -4804,11 +4804,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69efd5124b29aa469456b9a0e9bf30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.15
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
   invisibleFloor: {fileID: 0}
+  radius: 0.15
+  maxDistance: 3
+  sphereCastDirection: {x: 0, y: -1, z: 0}
 --- !u!1 &5536759829629227498
 GameObject:
   m_ObjectHideFlags: 0
