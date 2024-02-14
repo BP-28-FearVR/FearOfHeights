@@ -2781,6 +2781,8 @@ GameObject:
   - component: {fileID: 1934106133}
   - component: {fileID: 1934106132}
   - component: {fileID: 1934106137}
+  - component: {fileID: 1934106139}
+  - component: {fileID: 1934106138}
   m_Layer: 0
   m_Name: Objects example
   m_TagString: Untagged
@@ -3053,6 +3055,24 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &1934106138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934106130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bfb0b11ea52e4439a7923ea66b6d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xrGrabInteractable: {fileID: 1934106137}
+  outline: {fileID: 1934106139}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1945280851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3110,6 +3130,10 @@ SphereCollider:
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1945280854
 MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3273,6 +3297,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4253366028285916423, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
   m_PrefabInstance: {fileID: 988287706}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1934106139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934106130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2128931018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4324426479624091419, guid: d3b1b67b377c18b4f9bd3c9b70208519, type: 3}
