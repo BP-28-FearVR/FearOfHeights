@@ -7,20 +7,27 @@ using UnityEngine.InputSystem;
 public class APKfix : MonoBehaviour
 {
     private static float angle;
+    private static Vector3 positionOffset;
 
+    public Transform xrOriginBasePrefab;
     public Transform xrOrigin;
     public Transform mainCamera;
+    public CharacterController charController;
 
     public int belongsToScene;
 
     public InputActionProperty actionButton;
+    public InputActionProperty primaryButton;
 
     public TextMeshProUGUI textDisplay;
+
+    public GameObject recenterPoint;
     void Start()
     {
         if(belongsToScene == 0)
         {
             Invoke("GetRotation", .05f);
+            //GetRotation();
         } else
         {
             xrOrigin.eulerAngles += new Vector3(0, angle, 0);
@@ -30,8 +37,12 @@ public class APKfix : MonoBehaviour
     private void GetRotation()
     {
         Debug.Log("Getting the rotation now");
+        xrOrigin.localPosition = new Vector3(0, 0, 0);
+        positionOffset = -charController.center;
+        positionOffset.y = 0;
+        xrOrigin.Translate(positionOffset, Space.World);
         SetRotationUsingCamera();
-        ApplyRotation();
+        ApplyRotation(); //Rotation zerstört Arbeit vom Rücksetzen der Position. Vielleicht XR Origin nicht zentriert obwohl oben auf localposition (0,0,0) gesetzt wurde?
     }
 
     private void SetRotationUsingCamera()
@@ -55,10 +66,25 @@ public class APKfix : MonoBehaviour
         if(actionButton.action.WasPressedThisFrame())
         {
             SetRotationUsingXRORigin();
+            xrOrigin.Translate(positionOffset, Space.World);
         }
-        if(textDisplay != null)
+        if (actionButton.action.WasPressedThisFrame())
         {
-            textDisplay.text = "XR Origin: " + xrOrigin.eulerAngles.y + "\n Main Camera: " + mainCamera.eulerAngles.y + "\n Detected angle: " + angle;
+            SetRotationUsingXRORigin();
+            xrOrigin.Translate(positionOffset, Space.World);
+        }
+        if (textDisplay != null)
+        {
+            /*textDisplay.text = "XR Origin: " + xrOrigin.eulerAngles.y + "\n" +
+                "\n RecenterPoint Position: " + recenterPoint.transform.position + "\n Position Offset: " + positionOffset + "\n XR Origin Position: " + xrOrigin.position
+                + "\n Character Controller: " + charController.center;*/
+            textDisplay.text = "XROriginPrefab Pos Abs: " + xrOriginBasePrefab.position + "\n XROriginPrefab Pos Rel: " + xrOriginBasePrefab.localPosition +
+                 "\n XROriginPrefab Rot Abs: " + xrOriginBasePrefab.eulerAngles + "\n XROriginPrefab Rot Rel: " + xrOriginBasePrefab.localEulerAngles +
+                 "\n XROrigin Pos Abs: " + xrOrigin.transform.position + "\n XROrigin Pos Rel: " + xrOrigin.transform.localPosition +
+                 "\n XROrigin Rot Abs: " + xrOrigin.transform.eulerAngles + "\n XROrigin Rot Rel: " + xrOrigin.transform.localEulerAngles +
+                 "\n Camera Pos Abs: " + mainCamera.transform.position + "\n Camera Pos Rel: " + mainCamera.transform.localPosition +
+                 "\n Camera Rot Abs: " + mainCamera.transform.eulerAngles + "\n Camera Rot Rel: " + mainCamera.transform.localEulerAngles + "\n" + 
+                 "\n CharacterController Pos: " + charController.center + "\n Position Offset: " + positionOffset + "\n Angle: " + angle;
         }
     }
 }
