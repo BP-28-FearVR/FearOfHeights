@@ -26,28 +26,31 @@ public class APKfix : MonoBehaviour
     {
         if(belongsToScene == 0)
         {
-            Invoke("GetRotation", .05f);
+            Invoke("GetRotation", 1f);
             //GetRotation();
         } else
         {
-            xrOrigin.eulerAngles += new Vector3(0, angle, 0);
+            xrOriginBasePrefab.eulerAngles += new Vector3(0, angle, 0);
+            xrOriginBasePrefab.Translate(positionOffset, Space.World);
         }
     }
 
     private void GetRotation()
     {
         Debug.Log("Getting the rotation now");
-        xrOrigin.localPosition = new Vector3(0, 0, 0);
-        positionOffset = -charController.center;
-        positionOffset.y = 0;
-        xrOrigin.Translate(positionOffset, Space.World);
         SetRotationUsingCamera();
         ApplyRotation(); //Rotation zerstört Arbeit vom Rücksetzen der Position. Vielleicht XR Origin nicht zentriert obwohl oben auf localposition (0,0,0) gesetzt wurde?
+        xrOrigin.localPosition = new Vector3(0, 0, 0);
+        positionOffset = xrOrigin.TransformVector(-charController.center);
+        positionOffset.y = 0;
+        xrOriginBasePrefab.Translate(positionOffset, Space.World);
+        
     }
 
     private void SetRotationUsingCamera()
     {
         angle = 360 - mainCamera.eulerAngles.y;
+        Debug.Log(angle);
     }
 
     private void SetRotationUsingXRORigin()
@@ -57,7 +60,7 @@ public class APKfix : MonoBehaviour
 
     private void ApplyRotation()
     {
-        xrOrigin.eulerAngles += new Vector3(0, angle, 0);
+        xrOriginBasePrefab.eulerAngles += new Vector3(0, angle, 0);
     }
 
     // Update is called once per frame
@@ -65,13 +68,11 @@ public class APKfix : MonoBehaviour
     {
         if(actionButton.action.WasPressedThisFrame())
         {
-            SetRotationUsingXRORigin();
-            xrOrigin.Translate(positionOffset, Space.World);
+            xrOriginBasePrefab.Translate(positionOffset, Space.World);
         }
-        if (actionButton.action.WasPressedThisFrame())
+        if (primaryButton.action.WasPressedThisFrame())
         {
-            SetRotationUsingXRORigin();
-            xrOrigin.Translate(positionOffset, Space.World);
+            xrOrigin.localPosition = new Vector3(0, 0, 0);
         }
         if (textDisplay != null)
         {

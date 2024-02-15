@@ -17765,15 +17765,35 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1134870669}
     - target: {fileID: 5843580287357623575, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: recenterPoint
+      value: 
+      objectReference: {fileID: 896756135}
+    - target: {fileID: 5843580287357623575, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
       propertyPath: belongsToScene
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5843580287357623575, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: charController
+      value: 
+      objectReference: {fileID: 1134870672}
+    - target: {fileID: 5843580287357623575, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: xrOriginBasePrefab
+      value: 
+      objectReference: {fileID: 1134870671}
     - target: {fileID: 5843580287357623575, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
       propertyPath: actionButton.m_Reference
       value: 
       objectReference: {fileID: -274053370174316677, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 5843580287357623575, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: primaryButton.m_Reference
+      value: 
+      objectReference: {fileID: 3988791838922454229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 5843580287357623575, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
       propertyPath: actionButton.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843580287357623575, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+      propertyPath: primaryButton.m_UseReference
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6807516361311028264, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
@@ -17820,6 +17840,16 @@ Transform:
 --- !u!4 &1134870670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1737221740672166903, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+  m_PrefabInstance: {fileID: 1134870667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1134870671 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5728446097267047573, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
+  m_PrefabInstance: {fileID: 1134870667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &1134870672 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 4284212240379483871, guid: 2aa0a40e08eebda4a801a9fe7a8db00c, type: 3}
   m_PrefabInstance: {fileID: 1134870667}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1136876337
