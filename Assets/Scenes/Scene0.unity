@@ -1192,6 +1192,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 529442849699242995, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: sceneForOffsetSetup
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4766720592574872771, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: xrOrigin
       value: 

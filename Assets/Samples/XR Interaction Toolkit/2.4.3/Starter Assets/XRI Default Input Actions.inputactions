@@ -710,24 +710,6 @@
                     "processors": "",
                     "interactions": "Hold(duration=1)",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "TestAction",
-                    "type": "Button",
-                    "id": "59275745-19c5-41c5-b597-906e99df001d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "PrimaryButton",
-                    "type": "Button",
-                    "id": "e816b33e-d1c4-465c-8570-77908a3cfea3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -882,28 +864,6 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "MenuButton",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4e713229-4d53-473b-a2ab-cb14dcf6a83e",
-                    "path": "<XRController>{LeftHand}/{SecondaryButton}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TestAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "57332dcf-768d-4409-be0a-34208fd45d9c",
-                    "path": "<XRController>{LeftHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PrimaryButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

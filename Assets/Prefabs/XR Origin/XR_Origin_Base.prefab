@@ -2307,7 +2307,7 @@ GameObject:
   - component: {fileID: 2166925173888196101}
   - component: {fileID: 3752973851949079116}
   - component: {fileID: 6807516361311028264}
-  - component: {fileID: 5843580287357623575}
+  - component: {fileID: 1470054911942738471}
   m_Layer: 2
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -2455,7 +2455,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -7229917235241773598, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   recenterPoint: {fileID: 0}
---- !u!114 &5843580287357623575
+--- !u!114 &1470054911942738471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2464,40 +2464,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3601533994270973645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb93d0e9c86be5a4eac88f3a079c1cba, type: 3}
+  m_Script: {fileID: 11500000, guid: abcdf63ea826fad40815cdf5aa4ef65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xrOriginBasePrefab: {fileID: 0}
-  xrOrigin: {fileID: 0}
-  mainCamera: {fileID: 0}
-  charController: {fileID: 0}
-  belongsToScene: 0
-  actionButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Action Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 8208d328-489b-408a-b465-6a3be4c6dd61
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  primaryButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Primary Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: f6cbf33e-e007-4b9c-b184-53d955b40ab1
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  textDisplay: {fileID: 0}
-  recenterPoint: {fileID: 0}
+  xrOriginBaseTransform: {fileID: 5728446097267047573}
+  xrOriginTransform: {fileID: 1737221740672166903}
+  mainCameraTransform: {fileID: 2898250589281047763}
+  characterController: {fileID: 4284212240379483871}
+  sceneForOffsetSetup: 0
+  initiateSetupTime: 1
 --- !u!1 &3856778413706935048
 GameObject:
   m_ObjectHideFlags: 0
