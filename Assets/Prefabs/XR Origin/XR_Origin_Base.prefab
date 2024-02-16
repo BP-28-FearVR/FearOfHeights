@@ -2307,6 +2307,7 @@ GameObject:
   - component: {fileID: 2166925173888196101}
   - component: {fileID: 3752973851949079116}
   - component: {fileID: 6807516361311028264}
+  - component: {fileID: 1470054911942738471}
   m_Layer: 2
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -2454,6 +2455,24 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -7229917235241773598, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   recenterPoint: {fileID: 0}
+--- !u!114 &1470054911942738471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601533994270973645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcdf63ea826fad40815cdf5aa4ef65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xrOriginBaseTransform: {fileID: 5728446097267047573}
+  xrOriginTransform: {fileID: 1737221740672166903}
+  mainCameraTransform: {fileID: 2898250589281047763}
+  characterController: {fileID: 4284212240379483871}
+  sceneForOffsetSetup: 0
+  initiateSetupTime: 1
 --- !u!1 &3856778413706935048
 GameObject:
   m_ObjectHideFlags: 0
