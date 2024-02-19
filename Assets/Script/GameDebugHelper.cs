@@ -45,7 +45,10 @@ public class GameDebugHelper : MonoBehaviour
         left.action.performed += OnLeft;
         right.action.performed += OnRight;
 
-        _state = GameDebugHelperStates.Nothing;
+        if (_state != GameDebugHelperStates.DebugMode)
+        {
+            _state = GameDebugHelperStates.Nothing;
+        }
         _lastActionTime = 0;
     }
 
