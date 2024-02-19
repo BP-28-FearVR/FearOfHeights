@@ -1,10 +1,17 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Interactions;
 
 public class GameDebugHelper : MonoBehaviour
 {
     //Konami-Code: UP-UP-DOWN-DOWN-LEFT-RIGHT-LEFT-RIGHT-B-A
+
+    [Tooltip("The event to call when debugMode is enabled")]
+    [SerializeField] private UnityEvent onDebugModeEnabled;
+
+    [Tooltip("The event to call when debugMode is disabled")]
+    [SerializeField] private UnityEvent onDebugModeDisabled;
 
     [Tooltip("Time in seconds until the next 'state'/'button'/'event'(up,down,left,right,b,a) **has** to occur.")]
     [SerializeField] private double timeBetweenPresses = 1; // 1 Sec
@@ -56,6 +63,12 @@ public class GameDebugHelper : MonoBehaviour
     public static bool IsDebugModeEnabled()
     {
         return _state == GameDebugHelperStates.DebugMode;
+    }
+
+    // Disables debug mode
+    public void DisableDebugMode() {
+        _state = GameDebugHelperStates.Nothing;
+        onDebugModeDisabled.Invoke();
     }
 
     // Handels Moving Joystick to Up
@@ -151,6 +164,7 @@ public class GameDebugHelper : MonoBehaviour
         {
             case (GameDebugHelperStates.CorrectInput9, true):
                 GameDebugHelper._state = GameDebugHelperStates.DebugMode;
+                onDebugModeEnabled.Invoke();
                 break;
             default:
                 GameDebugHelper._state = GameDebugHelperStates.Nothing;
