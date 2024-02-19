@@ -2308,6 +2308,7 @@ GameObject:
   - component: {fileID: 3752973851949079116}
   - component: {fileID: 6807516361311028264}
   - component: {fileID: 1470054911942738471}
+  - component: {fileID: 8142631217473427053}
   m_Layer: 2
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -2473,6 +2474,24 @@ MonoBehaviour:
   characterController: {fileID: 4284212240379483871}
   sceneForOffsetSetup: 0
   initiateSetupTime: 1
+--- !u!114 &8142631217473427053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601533994270973645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e46d2159478c5846a4d68baec20b097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aButton: {fileID: -8104110653426437531, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  bButton: {fileID: 922150897833542368, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  up: {fileID: -5020608763383345049, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  down: {fileID: -3241357578865046449, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  left: {fileID: -6388435092119176550, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  right: {fileID: 5475936420558740613, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &3856778413706935048
 GameObject:
   m_ObjectHideFlags: 0
