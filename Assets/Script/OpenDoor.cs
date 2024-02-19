@@ -83,14 +83,7 @@ public class OpenDoor : MonoBehaviour
     //Starts the timer that calls OnTimerDone
     public void StartTriggerTimer()
     {
-        if (GameDebugHelper.IsDebugModeEnabled())
-        {
-            OnTimerDone();
-        }
-        else
-        {
-            Invoke("OnTimerDone", timeUntilDoorOpens);
-        }
+        Invoke("OnTimerDone", timeUntilDoorOpens);
     }
 
     // Opens door if closed and closes door if opened

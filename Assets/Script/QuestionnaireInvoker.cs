@@ -15,14 +15,7 @@ public class QuestionnaireInvoker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameDebugHelper.IsDebugModeEnabled())
-        {
-            TriggerQuestionnaire();
-        } else
-        {
-            Invoke("TriggerQuestionnaire", secondsToWait);
-        }
-        
+        Invoke("TriggerQuestionnaire", secondsToWait);
     }
 
     // this method deactivates the relaxation UI and enables the questionnaire

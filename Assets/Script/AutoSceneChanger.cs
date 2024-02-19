@@ -28,14 +28,7 @@ public class AutoSceneChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameDebugHelper.IsDebugModeEnabled())
-        {
-            OnTimerDone();
-        }
-        else
-        {
-            Invoke("OnTimerDone", time);
-        }
+        Invoke("OnTimerDone", time);
     }
 
     // Is called once the timer finishes, starts the questionnaire if there is one
