@@ -14,7 +14,7 @@ public class GameDebugHelper : MonoBehaviour
     [SerializeField] private UnityEvent onDebugModeDisabled;
 
     [Tooltip("The event to call when the DevMenu should be activated")]
-    [SerializeField] private UnityEvent onShowDevMenu;
+    [SerializeField] private UnityEvent onToggleDevMenu;
 
     [Tooltip("Time in seconds until the next 'state'/'button'/'event'(up,down,left,right,b,a) **has** to occur.")]
     [SerializeField] private double timeBetweenPresses = 1; // 1 Sec
@@ -37,6 +37,12 @@ public class GameDebugHelper : MonoBehaviour
     [Tooltip("Input Action for the Right.")]
     [SerializeField] private InputActionReference right;
 
+    [Tooltip("Input Action for the Y button.")]
+    [SerializeField] private InputActionReference yButton;
+
+    [Tooltip("Input Action for the X button.")]
+    [SerializeField] private InputActionReference xButton;
+
     // The time at which the last "event" occured
     private static double _lastActionTime = 0;
     // The current state of the Input
@@ -49,6 +55,8 @@ public class GameDebugHelper : MonoBehaviour
         
         aButton.action.performed += OnA;
         bButton.action.performed += OnB;
+        yButton.action.performed += OnY;
+        xButton.action.performed += OnX;
 
         up.action.performed += OnUp;
         down.action.performed += OnDown;
@@ -183,22 +191,35 @@ public class GameDebugHelper : MonoBehaviour
     // Handels B Button
     private void OnB(InputAction.CallbackContext context)
     {
-        if (_state != GameDebugHelperStates.DebugMode)
+        if (_state == GameDebugHelperStates.DebugMode) return;
+
+        switch ((GameDebugHelper._state, _lastActionTime - context.time <= timeBetweenPresses))
         {
-            switch ((GameDebugHelper._state, _lastActionTime - context.time <= timeBetweenPresses))
-            {
-                case (GameDebugHelperStates.CorrectInput8, true):
-                    GameDebugHelper._state = GameDebugHelperStates.CorrectInput9;
-                    break;
-                default:
-                    GameDebugHelper._state = GameDebugHelperStates.Nothing;
-                    break;
-            }
-            GameDebugHelper._lastActionTime = context.time;
-        } else
+            case (GameDebugHelperStates.CorrectInput8, true):
+                GameDebugHelper._state = GameDebugHelperStates.CorrectInput9;
+                break;
+            default:
+                GameDebugHelper._state = GameDebugHelperStates.Nothing;
+                break;
+        }
+        GameDebugHelper._lastActionTime = context.time;
+    }
+
+    // Handles Y Button
+    private void OnY(InputAction.CallbackContext context)
+    {
+        if (_state == GameDebugHelperStates.DebugMode)
         {
-            // DevMode
-            onShowDevMenu.Invoke();
+            onToggleDevMenu.Invoke();
+        }
+    }
+
+    // Handles X Button
+    private void OnX(InputAction.CallbackContext context)
+    {
+        if (_state == GameDebugHelperStates.DebugMode)
+        {
+            onToggleDevMenu.Invoke();
         }
     }
 }
