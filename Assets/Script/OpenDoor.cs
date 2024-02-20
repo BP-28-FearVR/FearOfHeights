@@ -31,7 +31,6 @@ public class OpenDoor : MonoBehaviour
     private bool _isOutlineOn = false;
     private bool _isDoorMoving = false;
     private bool _isDoorOpened = false;
-    private bool _timerActive = false;
 
     private float _remainingTime;
 
@@ -53,21 +52,24 @@ public class OpenDoor : MonoBehaviour
         }
     }
 
+    private void countDownTime()
+    {
+        // Decrease time left by 1 second as this function is called every second
+        _remainingTime -= 1f;
+        if (_remainingTime >= 0)
+        {
+            printRemainingTime();
+        }
+        if (_remainingTime <= 0)
+        {
+            timerTextUI.color = Color.green;
+            CancelInvoke("countDownTime");
+        }
+    }
+
     void Update()
     {
-        if(_timerActive)
-        {
-            // Calculate remaining time after the time passed since last frame
-            _remainingTime -= Time.deltaTime;
-            if(_remainingTime > 0)
-            {
-                printRemainingTime();
-            } else
-            {
-                timerTextUI.color = Color.green;
-                _timerActive = false;
-            }
-        }
+        
     }
 
     private void printRemainingTime()
@@ -134,7 +136,8 @@ public class OpenDoor : MonoBehaviour
         Invoke("OnTimerDone", timeUntilDoorOpens);
         if(timerTextUI != null)
         {
-            _timerActive = true;
+            // calls a function that counts down the time by 1 second every second after 1 second
+            InvokeRepeating("countDownTime", 1, 1);
         }
     }
 
