@@ -13,6 +13,9 @@ public class GameDebugHelper : MonoBehaviour
     [Tooltip("The event to call when debugMode is disabled")]
     [SerializeField] private UnityEvent onDebugModeDisabled;
 
+    [Tooltip("The event to call when the DevMenu should be activated")]
+    [SerializeField] private UnityEvent onShowDevMenu;
+
     [Tooltip("Time in seconds until the next 'state'/'button'/'event'(up,down,left,right,b,a) **has** to occur.")]
     [SerializeField] private double timeBetweenPresses = 1; // 1 Sec
 
@@ -55,6 +58,9 @@ public class GameDebugHelper : MonoBehaviour
         if (_state != GameDebugHelperStates.DebugMode)
         {
             _state = GameDebugHelperStates.Nothing;
+        } else
+        {
+            onDebugModeEnabled.Invoke();
         }
         _lastActionTime = 0;
     }
@@ -177,19 +183,23 @@ public class GameDebugHelper : MonoBehaviour
     // Handels B Button
     private void OnB(InputAction.CallbackContext context)
     {
-        if (_state == GameDebugHelperStates.DebugMode) return;
-
-        switch ((GameDebugHelper._state, _lastActionTime - context.time <= timeBetweenPresses))
+        if (_state != GameDebugHelperStates.DebugMode)
         {
-            case (GameDebugHelperStates.CorrectInput8, true):
-                GameDebugHelper._state = GameDebugHelperStates.CorrectInput9;
-                break;
-            default:
-                GameDebugHelper._state = GameDebugHelperStates.Nothing;
-                break;
+            switch ((GameDebugHelper._state, _lastActionTime - context.time <= timeBetweenPresses))
+            {
+                case (GameDebugHelperStates.CorrectInput8, true):
+                    GameDebugHelper._state = GameDebugHelperStates.CorrectInput9;
+                    break;
+                default:
+                    GameDebugHelper._state = GameDebugHelperStates.Nothing;
+                    break;
+            }
+            GameDebugHelper._lastActionTime = context.time;
+        } else
+        {
+            // DevMode
+            onShowDevMenu.Invoke();
         }
-
-        GameDebugHelper._lastActionTime = context.time;
     }
 }
 
