@@ -56,20 +56,19 @@ public class ExperimentController : MonoBehaviour
 
         //Spawn first Experiment Item
         SpawnNextItem();
-        printProgress();
+        displayProgress();
     }
 
     // OnTriggerEnter is called every time this GameObject's collider detects a collision with another GameObject
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("new Collision Enter with " + other.name + " and layer " + other.gameObject.layer);
         if (other.gameObject == null) return;
 
         // Handle it if the colliding GameObject is an Experiment Item
         if(IsExperimentItem(other.gameObject))
         {
             _itemsCollected++;
-            printProgress();
+            displayProgress();
             if (CheckIfExperimentEnded())
             {
                 EndExperiment();
@@ -87,14 +86,13 @@ public class ExperimentController : MonoBehaviour
     // OnTriggerExit is called every time this GameObject's collider detects that a collision with another GameObject has ended
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("new Collision Exit with " + other.name + " and layer " + other.gameObject.layer);
         if (other.gameObject == null) return;
 
         // Handle it if the no longer colliding GameObject is an Experiment Item
         if (IsExperimentItem(other.gameObject))
         {
             _itemsCollected--;
-            printProgress();
+            displayProgress();
         }
     }
 
@@ -141,7 +139,7 @@ public class ExperimentController : MonoBehaviour
     }
 
     // Print a progress report containing the amount of collected items and the overall amount of items to collect to a Progres Indicator UI
-    private void printProgress()
+    private void displayProgress()
     {
         if(progressIndicatorUI != null)
         {
