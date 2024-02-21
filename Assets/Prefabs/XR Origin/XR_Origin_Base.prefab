@@ -2444,6 +2444,7 @@ GameObject:
   - component: {fileID: 6807516361311028264}
   - component: {fileID: 1470054911942738471}
   - component: {fileID: 8142631217473427053}
+  - component: {fileID: 5747614742076819593}
   m_Layer: 2
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -2653,7 +2654,19 @@ MonoBehaviour:
         m_CallState: 2
   onToggleDevMenu:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5747614742076819593}
+        m_TargetAssemblyTypeName: DevModeMenu, Assembly-CSharp
+        m_MethodName: ToggleDevMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   timeBetweenPresses: 1
   aButton: {fileID: -8104110653426437531, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   bButton: {fileID: 922150897833542368, guid: c348712bda248c246b8c49b3db54643f, type: 3}
@@ -2663,6 +2676,19 @@ MonoBehaviour:
   right: {fileID: 5475936420558740613, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   yButton: {fileID: -724671348219295050, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   xButton: {fileID: -5004899814516401546, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &5747614742076819593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601533994270973645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabdfd6c03995854986cc1526516d1ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  devMenu: {fileID: 4499900351598541368}
 --- !u!1 &3856778413706935048
 GameObject:
   m_ObjectHideFlags: 0
@@ -6398,16 +6424,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1390591739836041600, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7162576505692392407}
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -6418,11 +6452,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: set_moveSpeed
       objectReference: {fileID: 0}
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.XR.Interaction.Toolkit.ContinuousMoveProviderBase, Unity.XR.Interaction.Toolkit
       objectReference: {fileID: 0}
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -6431,6 +6469,10 @@ PrefabInstance:
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2254266030448264655, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -6560,7 +6602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5543868692192557761, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_text
-      value: Button 1
+      value: Set Move Speed to 3
       objectReference: {fileID: 0}
     - target: {fileID: 5543868692192557761, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_fontSize
@@ -6628,7 +6670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8797760446060629918, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.12
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8797760446060629918, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6683,6 +6725,11 @@ PrefabInstance:
       addedObject: {fileID: 3774993902256102554}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+--- !u!1 &4499900351598541368 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1390591739836041600, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
+  m_PrefabInstance: {fileID: 3260188689009652664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6280666422524230694 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8797760446060629918, guid: 443093b4c5e09704fa225492981f6e5a, type: 3}
