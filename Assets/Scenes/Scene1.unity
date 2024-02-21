@@ -749,7 +749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5247185534016577085, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: m_text
-      value: Invoke Questionaire after 1 sec
+      value: Invoke Questionaire
       objectReference: {fileID: 0}
     - target: {fileID: 5568545084359665148, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: recenterPoint

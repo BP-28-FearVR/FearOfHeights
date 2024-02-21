@@ -67,11 +67,6 @@ public class OpenDoor : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        
-    }
-
     private void printRemainingTime()
     {
         int minutes = Mathf.FloorToInt(_remainingTime / 60);
@@ -139,6 +134,14 @@ public class OpenDoor : MonoBehaviour
             // calls a function that counts down the time by 1 second every second after 1 second
             InvokeRepeating("countDownTime", 1, 1);
         }
+    }
+
+    // For use by the dev menu
+    public void setTimeByDevMenu(float newRemainingTime)
+    {
+        _remainingTime = newRemainingTime;
+        CancelInvoke("OnTimerDone");
+        Invoke("OnTimerDone", _remainingTime);
     }
 
     // Opens door if closed and closes door if opened
