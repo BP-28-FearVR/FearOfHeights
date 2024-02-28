@@ -2667,6 +2667,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onToggleConsole:
+    m_PersistentCalls:
+      m_Calls: []
   timeBetweenPresses: 1
   aButton: {fileID: -8104110653426437531, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   bButton: {fileID: 922150897833542368, guid: c348712bda248c246b8c49b3db54643f, type: 3}

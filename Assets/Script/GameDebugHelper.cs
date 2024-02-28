@@ -16,6 +16,9 @@ public class GameDebugHelper : MonoBehaviour
     [Tooltip("The event to call when the DevMenu should be activated")]
     [SerializeField] private UnityEvent onToggleDevMenu;
 
+    [Tooltip("The event to call when the Console should be activated")]
+    [SerializeField] private UnityEvent onToggleConsole;
+
     [Tooltip("Time in seconds until the next 'state'/'button'/'event'(up,down,left,right,b,a) **has** to occur.")]
     [SerializeField] private double timeBetweenPresses = 1; // 1 Sec
 
@@ -219,7 +222,7 @@ public class GameDebugHelper : MonoBehaviour
     {
         if (_state == GameDebugHelperStates.DebugMode)
         {
-            onToggleDevMenu.Invoke();
+            onToggleConsole.Invoke();
         }
     }
 }
