@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CharacterControllerColissionDetection : MonoBehaviour
+public class CharacterControllerCollisionDisabler : MonoBehaviour
 {
     private CharacterController _characterController;
 

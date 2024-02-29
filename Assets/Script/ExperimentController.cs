@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 // Used to start, follow it's progress and end the experiment
@@ -15,6 +16,9 @@ public class ExperimentController : MonoBehaviour
 
     [Tooltip("The questionnaire that shall be shown to the user before changing the scene")]
     [SerializeField] private GameObject questionnaire;
+
+    [Tooltip("The progress indicator UI")]
+    [SerializeField] private TextMeshProUGUI progressIndicatorUI;
 
     // Enumerator to enumerate thorugh all the Experiment Items and spawn them
     private List<GameObject>.Enumerator _enumerator;
@@ -52,6 +56,7 @@ public class ExperimentController : MonoBehaviour
 
         //Spawn first Experiment Item
         SpawnNextItem();
+        displayProgress();
     }
 
     // OnTriggerEnter is called every time this GameObject's collider detects a collision with another GameObject
@@ -63,7 +68,8 @@ public class ExperimentController : MonoBehaviour
         if(IsExperimentItem(other.gameObject))
         {
             _itemsCollected++;
-            if(CheckIfExperimentEnded())
+            displayProgress();
+            if (CheckIfExperimentEnded())
             {
                 EndExperiment();
             } else
@@ -86,6 +92,7 @@ public class ExperimentController : MonoBehaviour
         if (IsExperimentItem(other.gameObject))
         {
             _itemsCollected--;
+            displayProgress();
         }
     }
 
@@ -129,5 +136,14 @@ public class ExperimentController : MonoBehaviour
         _enumerator.Current.SetActive(true);
         _enumerator.MoveNext();
         _itemsSpawned++;
+    }
+
+    // Print a progress report containing the amount of collected items and the overall amount of items to collect to a Progres Indicator UI
+    private void displayProgress()
+    {
+        if(progressIndicatorUI != null)
+        {
+            progressIndicatorUI.text = "Progress:\n" + _itemsCollected + "/" + experimentItems.Count;
+        }
     }
 }
