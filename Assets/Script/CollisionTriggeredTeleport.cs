@@ -61,7 +61,12 @@ public class CollisionTriggeredTeleport : CollisionTrigger
         //If the Teleport Mode is ResetToParent, check if Parent and Rigidbody to reset velocity with exists
         if (teleportType == TeleportMode.ResetToParent)
         {
-            if (other.gameObject.transform.parent == null) throw new System.Exception("No Parent for GameObject found to teleport to in Trigger Area Teleport GameObject");
+            // If the Collider Transform has no Parent, skip the Teleport Operation
+            // Usually triggered when the Player holds another GameObject while hitting the CollisionTrigger
+            if (other.gameObject.transform.parent == null)
+            {
+                return;
+            }
 
             Rigidbody otherRigidBody = other.gameObject.GetComponent<Rigidbody>();
             if(otherRigidBody == null) throw new System.Exception("No RigidBody for GameObject found in Trigger Area Teleport GameObject");
