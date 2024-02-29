@@ -3,38 +3,55 @@ using UnityEngine;
 
 public class ConsoleToGUI : MonoBehaviour
 {
-    static string myLog = "";
-    private string output;
-    private string stack;
+    private static string consoleLog = "";
 
     [Tooltip("The ConsoleGUI GameObject")]
     [SerializeField] private GameObject consoleGUI;
 
+    private TextMeshProUGUI textArea;
+
+    private void Start()
+    {
+        textArea = consoleGUI.GetComponentInChildren<TextMeshProUGUI>();
+        if (textArea == null) throw new System.Exception("No GameObject containing a TextMeshProUGUI component on a child passed to ConsoleToGUI");
+    }
+
     void OnEnable()
     {
+        // Subscribe to Application.logMessageReceived and call Log when it occurs
         Application.logMessageReceived += Log;
     }
 
     void OnDisable()
     {
+        // Unsubscribe from Application.logMessageReceived
         Application.logMessageReceived -= Log;
     }
 
-    public void Log(string logString, string stackTrace, LogType type)
+    // Get the newest Console log and put it infront of the other text so far
+    public void Log(string logString, string _, LogType logType)
     {
-        output = logString;
-        stack = stackTrace;
-        myLog = output + "\n" + myLog;
-        if (myLog.Length > 5000)
+        string logTypeText = logType.ToString();
+        // Give the log type a color
+        if(logType == LogType.Error || logType == LogType.Exception) 
         {
-            myLog = myLog.Substring(0, 4000);
+            logTypeText = "<color=red>" + logTypeText + "</color>";
+        } else if (logType == LogType.Warning)
+        {
+            logTypeText = "<color=yellow>" + logTypeText + "</color>";
+        } else
+        {
+            logTypeText = "<color=grey>" + logTypeText + "</color>";
         }
-        consoleGUI.GetComponentInChildren<TextMeshProUGUI>().text = myLog;
+        logTypeText += ": ";
+        // Put it infornt of the other text so far
+        consoleLog = logTypeText + logString + "\n" + consoleLog;
+        textArea.text = consoleLog;
     }
 
+    // Toggle the state of the console
     public void ToggleConsole()
     {
         consoleGUI.SetActive(!consoleGUI.activeSelf);
-        Debug.Log("Lol");
     }
 }

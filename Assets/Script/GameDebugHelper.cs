@@ -88,7 +88,7 @@ public class GameDebugHelper : MonoBehaviour
         onDebugModeDisabled.Invoke();
     }
 
-    // Handels Moving Joystick to Up
+    // Handles Moving Joystick to Up
     private void OnUp(InputAction.CallbackContext context)
     {
         if (GameDebugHelper._state == GameDebugHelperStates.DebugMode || context.interaction == null || !(context.interaction is SectorInteraction)) return;
@@ -109,7 +109,7 @@ public class GameDebugHelper : MonoBehaviour
         GameDebugHelper._lastActionTime = context.time;
     }
 
-    // Handels Moving Joystick to Down
+    // Handles Moving Joystick to Down
     private void OnDown(InputAction.CallbackContext context)
     {
         if (GameDebugHelper._state == GameDebugHelperStates.DebugMode || context.interaction == null || !(context.interaction is SectorInteraction)) return;
@@ -130,7 +130,7 @@ public class GameDebugHelper : MonoBehaviour
         GameDebugHelper._lastActionTime = context.time;
     }
 
-    // Handels Moving Joystick to the Left
+    // Handles Moving Joystick to the Left
     private void OnLeft(InputAction.CallbackContext context)
     {
         if (GameDebugHelper._state == GameDebugHelperStates.DebugMode || context.interaction == null || !(context.interaction is SectorInteraction)) return;
@@ -151,7 +151,7 @@ public class GameDebugHelper : MonoBehaviour
         GameDebugHelper._lastActionTime = context.time;
     }
 
-    // Handels Moving Joystick to the Right
+    // Handles Moving Joystick to the Right
     private void OnRight(InputAction.CallbackContext context)
     {
         if (GameDebugHelper._state == GameDebugHelperStates.DebugMode || context.interaction == null || !(context.interaction is SectorInteraction)) return;
@@ -172,7 +172,7 @@ public class GameDebugHelper : MonoBehaviour
         GameDebugHelper._lastActionTime = context.time;
     }
 
-    // Handels A Button
+    // Handles A Button
     private void OnA(InputAction.CallbackContext context)
     {
         if (_state == GameDebugHelperStates.DebugMode) return;
@@ -191,7 +191,7 @@ public class GameDebugHelper : MonoBehaviour
         GameDebugHelper._lastActionTime = context.time;
     }
 
-    // Handels B Button
+    // Handles B Button
     private void OnB(InputAction.CallbackContext context)
     {
         if (_state == GameDebugHelperStates.DebugMode) return;

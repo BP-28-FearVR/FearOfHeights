@@ -407,6 +407,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2398198704871315363, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398198704871315363, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398198704871315363, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 614692138619413511}
+    - target: {fileID: 2398198704871315363, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: setTimeByDevMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398198704871315363, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: QuestionnaireInvoker, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398198704871315363, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398198704871315363, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4766720592574872771, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: xrOrigin
       value: 
@@ -453,7 +481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5247185534016577085, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: m_text
-      value: Invoke Questionnaire
+      value: Button 2
       objectReference: {fileID: 0}
     - target: {fileID: 5568545084359665148, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: recenterPoint
@@ -507,9 +535,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR_Origin_No_Movement Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8281865955873302701, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
+      propertyPath: m_text
+      value: Invoke Questionnaire
+      objectReference: {fileID: 0}
     - target: {fileID: 8989574592683136181, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8989574592683136181, guid: 9c1b84e14e18c6547a457267379bc33b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

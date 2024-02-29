@@ -12,8 +12,8 @@ public class DevModeMenu : MonoBehaviour
     {
         if(devMenu != null)
         {
+            //Check for each Button if it has any listener subscribed to the attached UnityEvent. If not, deactivate the button
             Button[] buttons = devMenu.GetComponentsInChildren<Button>();
-            Debug.Log(buttons);
             foreach(Button button in buttons)
             {
                 if (!hasListenerAttached(button.onClick)) 
@@ -24,6 +24,7 @@ public class DevModeMenu : MonoBehaviour
         }
     }
 
+    // Check if the UnityEvent has a Listener attached to him
     private bool hasListenerAttached(UnityEvent eventToCheck) {
         bool result = false;
         for (int i = 0; i < eventToCheck.GetPersistentEventCount(); i++)
@@ -36,6 +37,7 @@ public class DevModeMenu : MonoBehaviour
         return result;
     }
 
+    // Toggle the state of the DevMenu
     public void ToggleDevMenu()
     {
         devMenu.SetActive(!devMenu.activeSelf);
