@@ -31,6 +31,14 @@ public class AutoSceneChanger : MonoBehaviour
         Invoke("OnTimerDone", time);
     }
 
+    // For use by the dev menu
+    public void setTimeByDevMenu(float newTime)
+    {
+        time = newTime;
+        CancelInvoke("OnTimerDone");
+        Invoke("OnTimerDone", time);
+    }
+
     // Is called once the timer finishes, starts the questionnaire if there is one
     // scene change will then be handled by questionnaire, otherwise scene changes directly
     void OnTimerDone()
