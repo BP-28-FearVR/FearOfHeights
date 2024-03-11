@@ -162,9 +162,34 @@ Trigger Area Teleport PB
 
 ---
 
+### Functional Prefabs
+
+Auto Scene Changer
+- This Prefab is an functional game object which can be added to a scene in order to automate a scene transition
+- For more details see the script "Auto Scene Changer"
+
+Scene Changer Caller
+- ... to do
+
+Recenter Point
+- ... to do
+
+Trigger Area Event
+- This Prefab can be added to a scene to trigger a sequence of events if the user collides with the box collider
+- For more details see the script "Collision Triggered Event"
+
+Trigger Area Teleport
+- This Prefab can be used to teleport the user upon collision with the box collider
+- The user will be teleported to the relative coordinates specified in the editor field "Teleport Vector"
+- For more details see the script "Collision Triggered Teleport"
+
+Questionnaire Trigger
+- This Prefab is an functional game object which can be added to a scene in order to trigger the questionnaire after a given time x
+- For more details see the script "Questionnaire Invoker"
+
+---
 
 ### XR Origin
-### Functional Prefabs
 ### Editor-scripts
 ### Known Errors and Warnings
 
