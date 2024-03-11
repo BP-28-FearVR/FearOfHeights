@@ -1,11 +1,18 @@
 # Fear Of Heights
 
-Authors: Anis Afridi, Dennis McCarroll, Samuel Rother, Vitaliy Shykhardin
+Authors: Anis Afridi, Dennis McCarroll, Samuel Rother, Vitaliy Shykhardin 
+
+The project was implemented as a "Bachlor-Projekt" (Bachlor-project) during WiSe 23/24.
 
 ## Installation & Setup
 ### Installation
+This project was implemented using Unity 2022.3.12f1. We added the modules "Android Build Support" as well as "Windows Build Support (IL2CPP)" to the installation.
+
 ### Build
+Choose Android as your Build Platform (switch platform if necessary) and make sure the Company Name and Product name as well as the package name is set in the player settings. Under XR Plug-in Management, make sure OpenXR is selected and Meta Quest Support is activated. This project has been built for Meta Quest 3. Make sure that all the scenes needed (Scene0, Scene1, Scene2, Scene3) are included and either build or (if you have a USB Cable and your headset ready) skip to the next part.
+
 ### Deploy to Headset
+You can deploy the APK to the headset if you've connected your Headset via a USB Cable to your PC, have the Oculus App ready and your headset already in developer mode by selecting your headset in "Run Device" inside the Build Settings screen and pressing Build and Run. Alternatively you can build your APK using the "Build" button and moving your APK to the Headset using Meta Developer Hub or Sidequest.
 
 ## Content
 ### Walkthrough
