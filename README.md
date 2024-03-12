@@ -19,7 +19,7 @@ You can deploy the APK to the headset if you've connected your Headset via a USB
 The application was build with the main movement option being walking in real life.
 
 Scene 0 (Start)
-- (Due to a later explaination: If the Application is run standalone on the headset the user must not look around or move while the Application is starting. To be more precise: The user must keep still for approximately 1 second after the "Made with Unity" Logo during startup vanishes and the scene fades in. After that time the view will snap showing the UI infront of the user while saving this direction as a "starting direction")
+- The user doesn't move until 1 second after the application started (when the UI will be directly infront of him)
 - The user can read the instructions on a UI window and test interactions with grabbable objects.
 - The user has to enter a participant ID to start the experiment.
 
@@ -46,6 +46,10 @@ Scene 3 (Relaxation)
 
 
 #### Scene 0 (Start)
+
+Rotation Position Offset Fix
+
+- if the application is run standalone on the headset the user must not look around or move while the application is starting. To be more precise: The user must keep still for approximately 1 second after the "Made with Unity" logo during startup vanishes and the scene fades in. After that time the view will snap showing the UI infront of the user while saving this direction as a "starting direction"	
 
 UI Start Instructions
 
