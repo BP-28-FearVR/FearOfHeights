@@ -192,7 +192,7 @@ Trigger Area Event
 
 Trigger Area Teleport
 - This Prefab can be used to teleport the user upon collision with the box collider
-- The user will be teleported to the relative coordinates specified in the editor field "Teleport Vector"
+- The user can be teleported absolute/relative with a vector or to a GameObject/its parent
 - For more details see the script "Collision Triggered Teleport"
 
 Questionnaire Trigger
@@ -202,31 +202,46 @@ Questionnaire Trigger
 ---
 
 ### XR Origin
-There is 1 XR Origin Prefabs and two Variant of that Prefab.
+There is 1 XR Origin Prefabs, a variant of that Prefab and a variant of the variant.
 Most general change should be made to XR_Origin_Base
 * `XR_Origin_Base`
   * Contains the input managers, EventSystem and the XR Origin Rig (Camera, Hands)
   * All interactions-systems (and simular) are in this Rig.
-  	* Most of them in 'Main Camera' but also on other objects.    
+  	* Most of them in 'Main Camera' but also on other objects.  
 - `XR_Origin_No_Movement Variant`
   - It is mostly like `XR_Origin_Base` (it is a Prefab Variant -> most changes to XR Origin Base also take effct here)
   - But it disables the Move and Teleportation systems (in Locomtion System)
 - `XR_Origin_No_Movement_No_Ray Variant Variant`
-  - It is mostly like `XR_Origin_No_Movement Variant` (it is a Prefab Variant -> most changes to XR Origin Base and No Movment also take effct here)
-  - But it also disables the Ray Interactor 
+  - It is mostly like `XR_Origin_No_Movement Variant` (it is a Prefab Variant -> most changes to XR Origin Base and No Movment also take effect here)
+  - But it also disables the Ray Interactor
+
+The XR Origin has the following Button Mapping:
+* Left Controller:
+  * Joystick: Continuous Movement (except both the Prefab Variants, their speed is set to 0)
+  * MenuButton (While Pressed): Show a red square where the current RecenterPoint is set
+  * MenuButton (Hold for 1 sec): Recenter the user. He is teleported to the specified position facing the specified direction
+  * X (when DevMode is activated): Toggle the Console inside the application (custom made, not a out-of-the-box feature of unity)
+  * Y (when DevMode is activated): Toggle the DevModeMenu
+* Right Controller:
+  * Joystick: Snap Turn 45°
+  * Joystick, B, A: Input Code for activating the DevMode (UP-UP-DOWN-DOWN-LEFT-RIGHT-LEFT-RIGHT-B-A)
 
 ### Editor-scripts
 There are three Editor Scripts (in Assets/Editor).
-They allow you to more easiely Edit Custom Data.
+Both CollisionTriggeredEventEditor and CollisonTriggeredTeleportEditor specify the appropriate Scripts' content when displayed in the Inspector. It hides unneccesary variables based on the selection made.
+SceneObjectEditor exists in order to be able to drag and drop Scenes into a variable in the Inspector for both Standalone and In-Editor mode.
 
 ### Known Errors and Warnings
 * "Not allowed to access vertices on mesh ...."
 	* The Outline for the Objects you can pickup. cant get all vertices of a mesh
-* NullReferenceExecption in ConsoleToGUI.Log (happens somethimes -> Console is also not displayed) 
+* "NullReferenceExecption in ConsoleToGUI.Log" (happens somethimes -> Console is also not displayed) 
+* "[Path].../OpenXRSettings ..." is a occasionally occuring Warning that occurs when interacting with the scene in general.
+* "Non-convex MeshCollider with non-kinematic Rigidbody is no longer supported since Unity 5" is an actual Error that indicates incorrect use of MeshColliders and must be fixed when it occurs.
+* "No ... passed to ..." are a series of custom exceptions included in different scripts to indicate missing parameters in the Inspector or sometimes even invalid Script states.
 
 ## Used Assets
 
-Imported:
+#### Imported:
 * Floor: [Wooden Floor Material](https://assetstore.unity.com/packages/2d/textures-materials/wood/wooden-floor-materials-150564)  
 * Walls & Ceiling: [PBR Materials Sampler Pack](https://assetstore.unity.com/packages/2d/textures-materials/pbr-materials-sampler-pack-40112) 
 * Furniture: [Apartment Kit](https://assetstore.unity.com/packages/3d/environments/apartment-kit-124055) 
