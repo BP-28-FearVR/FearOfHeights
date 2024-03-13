@@ -216,7 +216,13 @@ Most general change should be made to XR_Origin_Base
   - But it also disables the Ray Interactor 
 
 ### Editor-scripts
+There are three Editor Scripts (in Assets/Editor).
+They allow you to more easiely Edit Custom Data.
+
 ### Known Errors and Warnings
+* "Not allowed to access vertices on mesh ...."
+	* The Outline for the Objects you can pickup. cant get all vertices of a mesh
+* NullReferenceExecption in ConsoleToGUI.Log (happens somethimes -> Console is also not displayed) 
 
 ## Used Assets
 
