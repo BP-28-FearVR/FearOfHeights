@@ -19909,8 +19909,28 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cb7ba0bfcdb279845b0e2e15bfeb3f6c, type: 2}
+    - target: {fileID: 6422694, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435126, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438230, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453316, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6453316, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474298, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
+      propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -27509,8 +27529,28 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cb7ba0bfcdb279845b0e2e15bfeb3f6c, type: 2}
+    - target: {fileID: 6422694, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435126, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438230, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453316, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6453316, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474298, guid: 4073f41b7d930f94d9470df64ec12b53, type: 3}
+      propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
