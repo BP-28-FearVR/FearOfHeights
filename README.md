@@ -129,6 +129,7 @@ Floor
 	- the object "Floor Collider PR" is an invisible box collider, which covers the whole Pit Room Area
 		- it can collide with the user and therefore prevent the user from falling trough the floor
 		- if the user moves too far over the edge of the pit, a raycast will detect this and the "Floor Collider PR" will be deactivated so the user will fall down
+		- this workaround was implemented because of the possibility to falsely move the XR Origin using the edge of the Pit and the virtual shape of the user
 
 
 Trigger Area For Entering PR
