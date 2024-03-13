@@ -202,6 +202,19 @@ Questionnaire Trigger
 ---
 
 ### XR Origin
+There is 1 XR Origin Prefabs and two Variant of that Prefab.
+Most general change should be made to XR_Origin_Base
+* `XR_Origin_Base`
+  * Contains the input managers, EventSystem and the XR Origin Rig (Camera, Hands)
+  * All interactions-systems (and simular) are in this Rig.
+  	* Most of them in 'Main Camera' but also on other objects.    
+- `XR_Origin_No_Movement Variant`
+  - It is mostly like `XR_Origin_Base` (it is a Prefab Variant -> most changes to XR Origin Base also take effct here)
+  - But it disables the Move and Teleportation systems (in Locomtion System)
+- `XR_Origin_No_Movement_No_Ray Variant Variant`
+  - It is mostly like `XR_Origin_No_Movement Variant` (it is a Prefab Variant -> most changes to XR Origin Base and No Movment also take effct here)
+  - But it also disables the Ray Interactor 
+
 ### Editor-scripts
 ### Known Errors and Warnings
 
