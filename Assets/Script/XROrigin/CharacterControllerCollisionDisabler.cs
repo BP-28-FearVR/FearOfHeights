@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// This class disables collision of this gameObject with all GameObject that don't have the Layer Floor or Trigger
+// This GameObject needs a CharacterController
 public class CharacterControllerCollisionDisabler : MonoBehaviour
 {
     private CharacterController _characterController;

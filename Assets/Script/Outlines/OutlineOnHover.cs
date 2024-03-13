@@ -2,6 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/*
+ * This class/script Handles adding a Outline when the Player hovers over an object.
+ * (Hand would pick up this object if button is pressed) 
+ * It need to be placed on the Object that should have the outline. 
+ * !The Gameobject also needs 'XRGrabInteractable' and a 'Outline'!
+ */
 public class OutlineOnHover : MonoBehaviour
 {
     [Tooltip("Grab Interactor of this GameObject")]
@@ -26,6 +32,7 @@ public class OutlineOnHover : MonoBehaviour
         
 
         Boolean outlineOn = false;
+        // Test if current Object is Grabbable & if is first choise for selecting 
         foreach (XRDirectInteractor interactor in xrGrabInteractable.interactorsHovering)
         {
             if (interactor != null && !interactor.IsSelecting(xrGrabInteractable))

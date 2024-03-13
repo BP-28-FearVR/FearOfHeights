@@ -2,6 +2,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+/*
+ This Script handles enabling/disabling the DevModeMenü Buttons based on if they have actions.
+ Needs a reference to an Dev Menu.
+ */
 public class DevModeMenu : MonoBehaviour
 {
     [Tooltip("The DevModeMenu GameObject")]

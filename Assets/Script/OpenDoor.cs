@@ -2,6 +2,8 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
+// This Class controlls the Door it is placed on.
+// It also handles writing a Countdown and being triggered using different methods.
 public class OpenDoor : MonoBehaviour
 {
     [Tooltip("The door to open")]

@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/*
+ This class is used as the Datatype for the Scene. So that the Editor only allowes to put in accutaly Scenes
+ */
 [System.Serializable]
 public class SceneObject
 {

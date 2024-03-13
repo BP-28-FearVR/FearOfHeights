@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 
 // This class handles switching between Scenes with a fade-out and fade-in effect
 public class SceneChanger : MonoBehaviour

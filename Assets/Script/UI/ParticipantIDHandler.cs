@@ -1,6 +1,10 @@
 using UnityEngine;
 using TMPro;
 
+/*
+    This Script handles the inputing of the ParticipantID (using the Prefab).
+    => The participant ID can be read (even in the scene after) with `ParticipantIDHandler.ParticipantID`
+ */
 public class ParticipantIDHandler : MonoBehaviour
 {
 

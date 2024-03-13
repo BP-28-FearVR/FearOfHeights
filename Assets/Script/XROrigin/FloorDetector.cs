@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// This class handles the special floor of the Pitroom. It controlls the invisibleFloor, based on if a spehere-cast hit the "fake" floor
+// (the layer of the fake floor doesnt collide with the Player) .// This GameObject needs a CharacterController
 public class FloorDetector : MonoBehaviour
 {
     [Tooltip("The layer which is detected by the Spherecast.")]

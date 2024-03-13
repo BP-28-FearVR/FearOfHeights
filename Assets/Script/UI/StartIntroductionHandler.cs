@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+/*
+ * Makes the Content of the StartIntroduction Display configurable. Using a Text List.
+ */
 public class StartIntroductionHandler : MonoBehaviour
 {
     [SerializeField] private Button nextButton;

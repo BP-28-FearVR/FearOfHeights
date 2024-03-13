@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 // Class that triggers a Teleport when the specified collision occurs

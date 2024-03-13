@@ -1,5 +1,11 @@
 using UnityEngine;
 
+/*
+ This class throws the tourch of the blank.
+  A ridiged body (the torch) needs to be set.
+  And (optionaly) the Vector of the force can be adjusted.
+ */
+
 public class TorchHandler : MonoBehaviour
 {
     [Tooltip("The Torch Rigidbody that should fall down.")]

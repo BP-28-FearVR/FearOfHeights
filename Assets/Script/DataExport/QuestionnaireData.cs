@@ -2,6 +2,8 @@ using System.IO;
 using System.Text;
 using UnityEngine.SceneManagement;
 
+//This class is used to describe/save the Data inputted on the questioners.
+// IT represents the Data. Converts it to CSV format and saves it. Based on the Paricipant Id and the of the questioner
 public class QuestionnaireData
 {
 

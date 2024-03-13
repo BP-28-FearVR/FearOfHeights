@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.XR;
 
+/*
+ This Script handles positioning the UI based on the Player/Head Position.
+ */
 public class PositionUI : MonoBehaviour
 {
     [Tooltip("Camera Offset")]

@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine;
 
 // Used to start, follow it's progress and end the experiment
+// More specificly it controlls the 'experiment' in the Pitroom.
+// e.g. counts the Object in the Baskit...
 public class ExperimentController : MonoBehaviour
 {
     [Tooltip("The SceneChanger to call if the experiment has ended")]

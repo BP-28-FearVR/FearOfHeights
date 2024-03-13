@@ -1,6 +1,9 @@
 using TMPro;
 using UnityEngine;
 
+/*
+ This Script handles enables displaying the Application Output (Text Output) to be displayed in game.
+ */
 public class ConsoleToGUI : MonoBehaviour
 {
     private static string consoleLog = "";
