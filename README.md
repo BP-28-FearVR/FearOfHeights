@@ -180,10 +180,11 @@ Auto Scene Changer
 - For more details see the script "Auto Scene Changer"
 
 Scene Changer Caller
-- ... to do
+- This Prefab is a functional game object which can be used as a workaround to call Scene Changer from a Unity Event
+- For more details see the script "Scene Changer Call"
 
 Recenter Point
-- ... to do
+- This Prefab is a mostly empty game object which should be used for the recenter function
 
 Trigger Area Event
 - This Prefab can be added to a scene to trigger a sequence of events if the user collides with the box collider
