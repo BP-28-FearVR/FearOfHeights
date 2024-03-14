@@ -1,6 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/* 
+ * This script invokes the questionnaire UI after a given time x
+ * The timer starts when the scene is loaded
+ */
 
 public class QuestionnaireInvoker : MonoBehaviour
 {
@@ -10,6 +13,7 @@ public class QuestionnaireInvoker : MonoBehaviour
     // Add the questionnaire object to the according field of the questionnaire trigger object in the unity editor
     [SerializeField] private GameObject questionnaire;
     // Add the relaxation UI object to the according field of the questionnaire trigger object in the unity editor
+    [Tooltip("Add the relaxation UI object of this scene which shall be deactivated before showing the questionnaire")]
     [SerializeField] private GameObject relaxUI;
 
     // Start is called before the first frame update

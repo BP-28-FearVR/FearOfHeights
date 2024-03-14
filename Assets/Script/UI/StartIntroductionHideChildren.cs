@@ -1,6 +1,10 @@
 using System;
 using UnityEngine;
 
+/*
+ * Handles showing and hiding Objects based on the Page of an StartIntroduction(Handler)
+ * Its OnPageChangeEvent has to be called by the StartIntroductionHandler.
+ */
 public class StartIntroductionHideChildren : MonoBehaviour
 {
 

@@ -2,6 +2,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/* This script implements the behaviour of the Questionnaire UI
+ * 
+ * It is responsible for displaying the questions and switching to other pages of the UI window
+ * It is also responsible for storing the user's answers locally and calling an external function to write them into a file
+*/
+
 public class QuestionnaireHandler : MonoBehaviour
 {
     [SerializeField] private Button nextButton;
@@ -18,6 +24,7 @@ public class QuestionnaireHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI shownQuestion;
 
     // radio buttons
+    [Tooltip("The radio button objects of the corresponding questionnaire")]
     [SerializeField] private Toggle[] options;
 
     // _choices[i] saves the index of which radio button is selected on page i, if none is selected _choices[i] contains -1

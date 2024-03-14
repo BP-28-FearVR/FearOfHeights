@@ -3,6 +3,10 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Interactions;
 
+/*
+ This Script handles getting and validating the input to enable the DevMode
+Konami-Code: UP-UP-DOWN-DOWN-LEFT-RIGHT-LEFT-RIGHT-B-A (on the right Controller)
+ */
 public class GameDebugHelper : MonoBehaviour
 {
     //Konami-Code: UP-UP-DOWN-DOWN-LEFT-RIGHT-LEFT-RIGHT-B-A
