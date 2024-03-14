@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// This script is used to change the RecenterPoint of the player. Can f.e. be called by a CollisionTriggeredEvent
 public class RecenterPointSetter : MonoBehaviour
 {
     [Tooltip("The GameObject to pass to a RecenterScript instance")]

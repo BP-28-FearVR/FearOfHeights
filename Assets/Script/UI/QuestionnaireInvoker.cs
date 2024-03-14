@@ -1,10 +1,9 @@
+using UnityEngine;
+
 /* 
  * This script invokes the questionnaire UI after a given time x
  * The timer starts when the scene is loaded
  */
-
-
-using UnityEngine;
 
 public class QuestionnaireInvoker : MonoBehaviour
 {

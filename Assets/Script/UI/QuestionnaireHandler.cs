@@ -1,14 +1,12 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
 /* This script implements the behaviour of the Questionnaire UI
  * 
  * It is responsible for displaying the questions and switching to other pages of the UI window
  * It is also responsible for storing the user's answers locally and calling an external function to write them into a file
 */
-
-
-
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
 
 public class QuestionnaireHandler : MonoBehaviour
 {

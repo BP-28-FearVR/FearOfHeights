@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Unity.XR.CoreUtils;
 
+// Recenter the Player to a RecenterPoint: The player is teleported to the RecenterPoint GameObject (at his feet) facing the x-direction of the RecenterPoint.
+// If a child Object of the RecenterPoint contains a Renderer, activate it when the Button is held down
 public class RecenterScript : MonoBehaviour
 {
 
